@@ -40,7 +40,7 @@ Include the CSS and JS files in your HTML
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.0/dist/style.css" />
 
-<script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.0/dist/not-a-toast.umd.cjs"></script>
+<script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.1/dist/not-a-toast.umd.cjs"></script>
 
 <script>
   // The function is available globally

@@ -7,8 +7,8 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "src/not-a-toast.js"),
       name: "toast",
-      fileName: "not-a-toast",
+      fileName: (format) => `not-a-toast.${format}.js`,
     },
-    rollupOptions: { },
+    rollupOptions: {},
   },
 });
