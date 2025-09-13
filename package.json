@@ -1,0 +1,41 @@
+{
+  "name": "not-a-toast",
+  "version": "1.0.0",
+  "description": "`not-a-toast` is a lightweight, customizable, and highly versatile JavaScript library for displaying beautiful and professional toast notifications on your web applications. With a wide range of options for customization, animations, themes, and more, you can create engaging and informative notifications that seamlessly integrate with your UI.",
+  "type": "module",
+  "main": "./dist/not-a-toast.umd.cjs",
+  "module": "./dist/not-a-toast.js",
+  "exports": {
+    ".": {
+      "import": "./dist/not-a-toast.js",
+      "require": "./dist/not-a-toast.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [
+    "toast",
+    "notification",
+    "alert",
+    "message",
+    "not-a-toast"
+  ],
+  "author": "Shaik Sharzil",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaiksharzil/not-a-toast.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shaiksharzil/not-a-toast/issues"
+  },
+  "homepage": "https://github.com/shaiksharzil/not-a-toast#readme",
+  "devDependencies": {
+    "vite": "^5.4.20"
+  }
+}

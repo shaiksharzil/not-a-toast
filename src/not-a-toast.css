@@ -1,0 +1,872 @@
+.toast-container.top-right {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* themes */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.neumorphic {
+  background: #e0e0e0;
+  color: #333;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+}
+.neumorphicDark {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: inset 4px 4px 8px #141414, inset -4px -4px 8px #2a2a2a,
+    4px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.liquidGlass {
+  background: transparent;
+  backdrop-filter: saturate(120%) blur(1px) brightness(1.2)
+    url(#glass-distortion);
+  -webkit-backdrop-filter: saturate(120%) blur(2px) brightness(1.2)
+    url(#glass-distortion);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.brutal {
+  background: #fff000;
+  border: 4px solid #000;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 6px 6px 0px #000;
+}
+
+.materialDark {
+  background: #2a2a2a;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.clay {
+  background: #e6eef9;
+  color: #2a2a2a;
+  box-shadow: inset 4px 4px 8px #c8d3e0, inset -4px -4px 8px #ffffff,
+    0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cyberpunk {
+  background: linear-gradient(135deg, #ff00cc, #3333ff);
+  color: #fff;
+  border: 2px solid #00f0ff;
+  text-shadow: 0 0 5px #0ff;
+  box-shadow: 0 0 15px #ff00cc, 0 0 20px #00f0ff;
+  font-weight: bold;
+}
+
+.sonoma {
+  background: rgba(240, 240, 240, 0.2);
+  color: #1c1c1c;
+  backdrop-filter: blur(18px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.minimal {
+  background: transparent;
+  color: #333;
+  border: 2px solid #333;
+  font-family: monospace;
+}
+
+.skewed {
+  background: #fff;
+  color: #111;
+  transform: skew(-5deg);
+  box-shadow: 4px 4px 0 #000;
+  border: 2px solid #000;
+}
+
+.solarizedDark {
+  background: #002b36;
+  color: #93a1a1;
+  border: 1px solid #586e75;
+  box-shadow: 0 0 10px rgba(0, 43, 54, 0.7);
+}
+
+.terminal {
+  background: #000000;
+  color: #00ff00;
+  font-family: "Courier New", monospace;
+  border: 1px solid #00ff00;
+  text-shadow: 0 0 2px #00ff00;
+}
+
+.carbon {
+  background: #212121;
+  color: #f4f4f4;
+  font-family: "IBM Plex Sans", sans-serif;
+  border-left: 4px solid #0f62fe;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+}
+
+.web3 {
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: #e0ffe0;
+  border: 1px solid #44ff99;
+  box-shadow: 0 0 12px #44ff99aa;
+  font-family: "Courier New", monospace;
+}
+
+.cardboard {
+  background: #d7c4a3;
+  color: #4e3728;
+  border: 2px dashed #a37c4e;
+  font-family: "Comic Sans MS", cursive;
+}
+
+.dotted {
+  background: #fff;
+  color: #222;
+  border: 2px dotted #666;
+  font-family: monospace;
+}
+
+.focus {
+  background: #000;
+  color: #fff;
+  border: 2px solid #00f;
+  box-shadow: 0 0 0 3px #88f;
+  border-radius: 6px;
+}
+
+.default {
+  background: #ffffff;
+  color: #333;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Gradient {
+  background: linear-gradient(to right, #ff8efb, #8efff2);
+  color: #222;
+}
+
+.rainbow {
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  color: white;
+}
+
+.darkMatter {
+  background: #0f0f0f;
+  color: white;
+}
+
+.gothicMist {
+  background: rgba(60, 60, 60, 0.8);
+  color: white;
+}
+
+.blackGlass {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.terminalGreen {
+  background: #000;
+  color: #00ff00;
+  font-family: monospace;
+}
+
+.aetherGrid {
+  background: #121212;
+  color: white;
+  border: 1px dashed #ccc;
+}
+
+.neonGlow {
+  background: #0f0f0f;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff;
+  border: 1px solid #0ff;
+}
+
+.stickyNote {
+  background: #fff9a1;
+  color: #222;
+  border: 1px solid #e6d800;
+}
+
+.notebookSketch {
+  background: #fafafa;
+  color: #333;
+  border: 2px dashed #999;
+}
+
+.chalkboard {
+  background: #2c2c2c;
+  color: #fefefe;
+  font-family: "Courier New", monospace;
+}
+
+.pixelRetro {
+  background: #0000aa;
+  color: #ffffff;
+  font-family: "Press Start 2P", monospace;
+}
+
+.blueprintSketch {
+  background: #0a0f2c;
+  color: #61dafb;
+  font-family: monospace;
+}
+
+.ironMesh {
+  background: #444;
+  border: 2px dashed #aaa;
+  color: #eee;
+  box-shadow: inset 0 0 5px #666;
+}
+
+.circuitBoard {
+  background: #003b00;
+  color: #00ff90;
+  font-family: monospace;
+  border: 1px solid #009900;
+}
+
+.warningAlert {
+  background: #fff200;
+  color: #000;
+  border: 2px solid red;
+  font-weight: bold;
+}
+
+.woodGrain {
+  background-color: #deb887;
+  color: #3e2f1c;
+  border: 1px solid #8b5a2b;
+  font-family: "Georgia", serif;
+}
+
+.cautionTape {
+  background-color: yellow;
+  color: black;
+  border: 4px double black;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.typewriterNote {
+  background-color: #fff8dc;
+  color: #222;
+  font-family: "Courier", monospace;
+  border: 1px solid #aaa;
+  text-shadow: 0.5px 0.5px #ddd;
+}
+
+.xrayOverlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ccf8ff;
+  border: 1px solid #88e1f2;
+  font-family: "Segoe UI", sans-serif;
+  backdrop-filter: blur(4px);
+}
+
+.legoBrick {
+  background: #ff3d00;
+  color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 4px #b71c1c, 0 6px 10px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes zoomOut {
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideOutLeft {
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideOutRight {
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideOutUp {
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideOutDown {
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes bounceOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+}
+
+@keyframes flipInX {
+  from {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flipOutX {
+  from {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipInY {
+  from {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+@keyframes flipOutY {
+  from {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotate(-200deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateOut {
+  from {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotate(200deg);
+    opacity: 0;
+  }
+}
+
+@keyframes punchIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes punchOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(40px) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-5px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bubbleDown {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes swirlIn {
+  0% {
+    transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes swirlOut {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(540deg) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes wobbleIn {
+  0% {
+    transform: scale(0.9) rotateZ(-3deg);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.05) rotateZ(3deg);
+  }
+  80% {
+    transform: scale(0.97) rotateZ(-1deg);
+  }
+  100% {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes wobbleOut {
+  0% {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8) rotateZ(10deg);
+    opacity: 0;
+  }
+}
+
+@keyframes tiltUp {
+  from {
+    transform: rotateX(-45deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes tiltDown {
+  from {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotateX(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes windRightIn {
+  0% {
+    transform: translateX(100%) skewX(-45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes windRightOut {
+  0% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%) skewX(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes windLeftIn {
+  0% {
+    transform: translateX(-100%) skewX(45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes windLeftOut {
+  0% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) skewX(-45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes squeezeIn {
+  0% {
+    transform: scaleX(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scaleX(1.2);
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes squeezeOut {
+  0% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(0.1);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeSlideZoomIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8) rotateZ(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1) rotateZ(0deg);
+  }
+}
+
+@keyframes fadeSlideZoomOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0px) scale(1) rotateZ(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.8) rotateZ(5deg);
+  }
+}
+
+@keyframes helixSpinIn {
+  0% {
+    opacity: 0;
+    transform: rotateY(720deg) rotateZ(90deg) scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg) rotateZ(0deg) scale(1);
+  }
+}
+
+@keyframes helixSpinOut {
+  0% {
+    opacity: 1;
+    transform: rotateY(0deg) rotateZ(0deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotateY(-720deg) rotateZ(-90deg) scale(0.3);
+  }
+}
+
+@keyframes meteorDropIn {
+  0% {
+    transform: translate3d(150px, -150px, 200px) rotateZ(45deg) scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotateZ(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes meteorZoomOut {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-100px, 100px, -200px) scale(0.1);
+    opacity: 0;
+  }
+}
+
+@keyframes portalIn {
+  0% {
+    transform: scale(0.1) rotateX(90deg) rotateY(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotateX(0deg) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes portalOut {
+  0% {
+    transform: scale(1) rotateX(0deg) rotateY(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.1) rotateX(-90deg) rotateY(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes cubeSpinIn {
+  0% {
+    transform: perspective(600px) rotateY(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(600px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes cubeSpinOut {
+  0% {
+    transform: perspective(600px) rotateY(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: perspective(600px) rotateY(-90deg);
+    opacity: 0;
+  }
+}
+
+/* ProgressBar */
+@keyframes progress {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+/* Icon animations */
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes iconSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes iconWave {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(15deg); }
+  30% { transform: rotate(-10deg); }
+  45% { transform: rotate(15deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Loaders */
+.loader {
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
