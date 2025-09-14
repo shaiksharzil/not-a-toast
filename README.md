@@ -16,38 +16,59 @@
 - Rich Icon System & Animations
 - Custom HTML Toast Content
 
-### Installation
-You can install `not-a-toast` via npm or include it directly in your HTML.
-#### Via npm
+## Demo
+Check out the live demo to see not-a-toast in action:https://not-a-toast.vercel.app/
 
+## Installation
+You can add not-a-toast to your project using either npm or by including it directly in your HTML file via a CDN.
+### Via npm
+This is the recommended method for modern web applications.
+
+1. Install the package:
 ```js
 npm install not-a-toast
 ```
-
-#### Then, you can import it into your project:
+2. Import and use it in your project:
 ```js
+// 1. Import the toast function and its stylesheet
 import toast from 'not-a-toast';
+import 'not-a-toast/style.css';
 
-// ❗ Don't forget to import the CSS!
-import 'not-a-toast/dist/style.css';
-
-// Now you can use it
-toast({ message: "Hello from npm!" });
+// 2. Use it in your application
+toast({ message: 'Hello from npm! 👋' });
 ```
 
-#### Via CDN (or direct script include)
-Include the CSS and JS files in your HTML
+### Via CDN
+Use this method for quick demos or projects without a build step.
+
+1. Add the following lines to your HTML file:
+  This will make the toast() function globally available in your script.
+
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.0/dist/style.css" />
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Not-a-Toast Demo</title>
 
-<script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.1/dist/not-a-toast.umd.cjs"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@latest/dist/style.css">
+</head>
+<body>
 
-<script>
-  // The function is available globally
-  toast({ message: "Hello from the CDN!" });
-</script>
+  <button onclick="showMyToast()">Show Toast!</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@latest/dist/not-a-toast.umd.js"></script>
+
+  <script>
+    function showMyToast() {
+      toast({ message: 'Hello from the CDN! 🚀' });
+    }
+  </script>
+
+</body>
+</html>
 ```
 
+```
 #### Basic Usage
 To display a basic toast notification, simply call the `toast()` function with a message:
 ```js
@@ -395,3 +416,5 @@ async function testApiToast() {
 
 testApiToast();
 ```
+## Support
+If you find this library useful, please consider giving it a star ⭐ on GitHub! Your support helps motivate me to maintain and improve it.

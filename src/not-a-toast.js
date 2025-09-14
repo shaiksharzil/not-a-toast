@@ -290,8 +290,7 @@ function toast(options = {}, config) {
   if (!customToast) {
     if (showActionButton && actionButtonLabel) {
       const actionBtn = document.createElement("div");
-      actionBtn.className = "actionBtn";
-      actionBtn.id = `${actionButtontheme}`;
+      actionBtn.className = `actionBtn ${actionButtontheme}`;
       actionBtn.textContent = actionButtonLabel;
       actionBtn.style.cursor = "pointer";
       actionBtn.style.padding = actionButtonPadding;
@@ -623,7 +622,7 @@ function updateToast(id, newConfig = {}) {
       actionBtn.style.margin = actionButtonMargin;
       actionBtn.style.overflow = "hidden";
     } else actionBtn = toast.querySelector(".actionBtn");
-    actionBtn.id = `${actionButtontheme}`;
+    actionBtn.className += ` ${actionButtontheme}`;
     actionBtn.textContent = actionButtonLabel;
     let borStr = getComputedStyle(tempTheme).border;
     if (

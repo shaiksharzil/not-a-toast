@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  z-index: 1000;
+  z-index: 1000000;
   pointer-events: none;
 }
 
