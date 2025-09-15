@@ -151,7 +151,16 @@ function toast(options = {}, config) {
       toast.style.maxWidth = "80%";
     }
   }
-  if (customToast) toast.innerHTML = customToast;
+  if (customToast) {
+    toast.innerHTML = customToast;
+    const customCloseBtn = toast.querySelector(".close-btn");
+    if (customCloseBtn) {
+      customCloseBtn.addEventListener("click", () => {
+        clearTimeout(timeout);
+        toastExit("cancel");
+      });
+    }
+  }
   toast.style.pointerEvents = "auto";
   toast.style.animation = `${entryAnimation} 0.4s ease`;
 
