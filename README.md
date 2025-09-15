@@ -68,7 +68,6 @@ Use this method for quick demos or projects without a build step.
 </html>
 ```
 
-```
 #### Basic Usage
 To display a basic toast notification, simply call the `toast()` function with a message:
 ```js

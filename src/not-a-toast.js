@@ -53,7 +53,7 @@ function toast(options = {}, config) {
     closeButtonColor,
     closeButtonSize = "1rem",
     showActionButton = false,
-    actionButtontheme = theme,
+    actionButtonTheme = theme,
     actionButtonLabel,
     onAction,
     actionButtonColor,
@@ -82,7 +82,7 @@ function toast(options = {}, config) {
     container.style.position = "fixed";
     container.style.display = "flex";
     container.style.gap = "0.8rem";
-    container.style.zIndex = "1000";
+    container.style.zIndex = "1000000";
     container.style.pointerEvents = "none";
     container.style.width = "100%";
 
@@ -290,7 +290,7 @@ function toast(options = {}, config) {
   if (!customToast) {
     if (showActionButton && actionButtonLabel) {
       const actionBtn = document.createElement("div");
-      actionBtn.className = `actionBtn ${actionButtontheme}`;
+      actionBtn.className = `actionBtn ${actionButtonTheme}`;
       actionBtn.textContent = actionButtonLabel;
       actionBtn.style.cursor = "pointer";
       actionBtn.style.padding = actionButtonPadding;
@@ -402,7 +402,7 @@ function updateToast(id, newConfig = {}) {
     actionButtonPadding = "0.4rem",
     actionButtonMargin = "0rem 0rem 0rem 0.8rem",
     actionButtonBorderRadius = "0.3rem",
-    actionButtontheme = newConfig.theme || originalConfig.theme || "default",
+    actionButtonTheme = newConfig.theme || originalConfig.theme || "default",
     actionButtonLabel = originalConfig.actionButtonLabel,
     showCloseButton,
     pauseOnHover,
@@ -622,7 +622,7 @@ function updateToast(id, newConfig = {}) {
       actionBtn.style.margin = actionButtonMargin;
       actionBtn.style.overflow = "hidden";
     } else actionBtn = toast.querySelector(".actionBtn");
-    actionBtn.className += ` ${actionButtontheme}`;
+    actionBtn.className += ` ${actionButtonTheme}`;
     actionBtn.textContent = actionButtonLabel;
     let borStr = getComputedStyle(tempTheme).border;
     if (
