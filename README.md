@@ -1,6 +1,8 @@
 # not-a-toast
 `not-a-toast` is a lightweight, customizable, and highly versatile JavaScript library for displaying beautiful and professional toast notifications on your web applications. With a wide range of options for customization, animations, themes, and more, you can create engaging and informative notifications that seamlessly integrate with your UI.
 
+![Project Demo GIF](https://github.com/shaiksharzil/not-a-toast/blob/main/src/assets/not-a-toast.gif)
+
 ## Key Features of `not-a-toast`
 - Lightweight & Easy to Use
 - Fully Customizable Toasts
@@ -50,13 +52,13 @@ Use this method for quick demos or projects without a build step.
 <head>
   <title>Not-a-Toast Demo</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.5/dist/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.6/dist/style.css">
 </head>
 <body>
 
   <button onclick="showMyToast()">Show Toast!</button>
 
-  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.5/dist/not-a-toast.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.6/dist/not-a-toast.umd.js"></script>
 
   <script>
     function showMyToast() {
