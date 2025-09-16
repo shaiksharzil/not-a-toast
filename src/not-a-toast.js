@@ -46,7 +46,7 @@ function toast(options = {}, config) {
     background,
     color,
     border,
-    borderRadius = "0.3rem",
+    borderRadius,
     fontSize,
     fontFamily,
     opacity,
@@ -141,6 +141,7 @@ function toast(options = {}, config) {
     toast.style.display = "flex";
     toast.style.justifyContent = "space-between";
     toast.style.alignItems = "center";
+    toast.style.overflow = "hidden";
     if (border) toast.style.border = border;
     if (opacity) toast.style.opacity = opacity;
     if (borderRadius) toast.style.borderRadius = borderRadius;
