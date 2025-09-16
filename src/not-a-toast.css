@@ -13,12 +13,14 @@
   background: #e0e0e0;
   color: #333;
   box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+  border-radius: 12px;
 }
 .neumorphicDark {
   background: #1e1e1e;
   color: #e0e0e0;
   box-shadow: inset 4px 4px 8px #141414, inset -4px -4px 8px #2a2a2a,
     4px 4px 12px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
 }
 
 .liquidGlass {
@@ -45,6 +47,7 @@
   background: #2a2a2a;
   color: #fff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
 }
 
 .clay {
@@ -52,6 +55,7 @@
   color: #2a2a2a;
   box-shadow: inset 4px 4px 8px #c8d3e0, inset -4px -4px 8px #ffffff,
     0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
 }
 
 .cyberpunk {
@@ -76,6 +80,7 @@
   color: #333;
   border: 2px solid #333;
   font-family: monospace;
+  border-radius: 6px;
 }
 
 .skewed {
@@ -99,6 +104,7 @@
   font-family: "Courier New", monospace;
   border: 1px solid #00ff00;
   text-shadow: 0 0 2px #00ff00;
+  border-radius: 4px;
 }
 
 .carbon {
@@ -116,6 +122,7 @@
   border: 1px solid #44ff99;
   box-shadow: 0 0 12px #44ff99aa;
   font-family: "Courier New", monospace;
+  border-radius: 10px;
 }
 
 .cardboard {
@@ -123,6 +130,7 @@
   color: #4e3728;
   border: 2px dashed #a37c4e;
   font-family: "Comic Sans MS", cursive;
+  border-radius: 6px;
 }
 
 .dotted {
@@ -130,6 +138,7 @@
   color: #222;
   border: 2px dotted #666;
   font-family: monospace;
+  border-radius: 4px;
 }
 
 .focus {
@@ -145,11 +154,13 @@
   color: #333;
   border: 1px solid #ddd;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
 }
 
 .Gradient {
   background: linear-gradient(to right, #ff8efb, #8efff2);
   color: #222;
+  border-radius: 12px;
 }
 
 .rainbow {
@@ -164,21 +175,25 @@
     violet
   );
   color: white;
+  border-radius: 16px;
 }
 
 .darkMatter {
   background: #0f0f0f;
   color: white;
+  border-radius: 6px;
 }
 
 .gothicMist {
   background: rgba(60, 60, 60, 0.8);
   color: white;
+  border-radius: 8px;
 }
 
 .blackGlass {
   background: rgba(0, 0, 0, 0.6);
   color: white;
+  border-radius: 10px;
 }
 
 .terminalGreen {
@@ -191,6 +206,7 @@
   background: #121212;
   color: white;
   border: 1px dashed #ccc;
+  border-radius: 6px;
 }
 
 .neonGlow {
@@ -198,12 +214,14 @@
   color: #0ff;
   text-shadow: 0 0 5px #0ff;
   border: 1px solid #0ff;
+  border-radius: 10px;
 }
 
 .stickyNote {
   background: #fff9a1;
   color: #222;
   border: 1px solid #e6d800;
+  border-radius: 4px;
 }
 
 .notebookSketch {
@@ -216,6 +234,7 @@
   background: #2c2c2c;
   color: #fefefe;
   font-family: "Courier New", monospace;
+  border-radius: 4px;
 }
 
 .pixelRetro {
@@ -228,6 +247,7 @@
   background: #0a0f2c;
   color: #61dafb;
   font-family: monospace;
+  border-radius: 2px;
 }
 
 .ironMesh {
@@ -235,6 +255,7 @@
   border: 2px dashed #aaa;
   color: #eee;
   box-shadow: inset 0 0 5px #666;
+  border-radius: 6px;
 }
 
 .circuitBoard {
@@ -242,6 +263,7 @@
   color: #00ff90;
   font-family: monospace;
   border: 1px solid #009900;
+  border-radius: 4px;
 }
 
 .warningAlert {
@@ -249,6 +271,7 @@
   color: #000;
   border: 2px solid red;
   font-weight: bold;
+  border-radius: 6px;
 }
 
 .woodGrain {
@@ -256,6 +279,7 @@
   color: #3e2f1c;
   border: 1px solid #8b5a2b;
   font-family: "Georgia", serif;
+  border-radius: 8px;
 }
 
 .cautionTape {
@@ -264,6 +288,7 @@
   border: 4px double black;
   font-weight: bold;
   letter-spacing: 1px;
+  border-radius: 2px;
 }
 
 .typewriterNote {
@@ -272,6 +297,7 @@
   font-family: "Courier", monospace;
   border: 1px solid #aaa;
   text-shadow: 0.5px 0.5px #ddd;
+  border-radius: 4px;
 }
 
 .xrayOverlay {
@@ -280,6 +306,7 @@
   border: 1px solid #88e1f2;
   font-family: "Segoe UI", sans-serif;
   backdrop-filter: blur(4px);
+  border-radius: 12px;
 }
 
 .legoBrick {
@@ -289,6 +316,7 @@
   box-shadow: 0 4px #b71c1c, 0 6px 10px rgba(0, 0, 0, 0.3);
   font-weight: 700;
   letter-spacing: 0.5px;
+  border-radius: 6px;
 }
 
 /* animations */
@@ -303,6 +331,10 @@
   }
 }
 @keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
   to {
     opacity: 0;
     transform: translateY(-10px);
@@ -320,6 +352,10 @@
   }
 }
 @keyframes zoomOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
   to {
     opacity: 0;
     transform: scale(0);
@@ -337,6 +373,10 @@
   }
 }
 @keyframes slideOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
   to {
     opacity: 0;
     transform: translateX(-100%);
@@ -354,6 +394,10 @@
   }
 }
 @keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
   to {
     opacity: 0;
     transform: translateX(100%);
@@ -371,6 +415,10 @@
   }
 }
 @keyframes slideOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
   to {
     opacity: 0;
     transform: translateY(-100%);
@@ -388,6 +436,10 @@
   }
 }
 @keyframes slideOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
   to {
     opacity: 0;
     transform: translateY(100%);
@@ -793,14 +845,25 @@
   }
 }
 
-/* ProgressBar */
-@keyframes progress {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0%;
-  }
+/* ProgressBar Animations */
+@keyframes leftToRight {
+  from { transform: translateX(-100%); }  
+  to   { transform: translateX(0); }
+}
+
+@keyframes rightToLeft {
+  from { width: 100%; }
+  to   { width: 0%; }
+}
+
+@keyframes expand {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes shrink {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
 }
 
 /* Icon animations */

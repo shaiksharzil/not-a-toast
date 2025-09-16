@@ -50,13 +50,13 @@ Use this method for quick demos or projects without a build step.
 <head>
   <title>Not-a-Toast Demo</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@latest/dist/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.5/dist/style.css">
 </head>
 <body>
 
   <button onclick="showMyToast()">Show Toast!</button>
 
-  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@latest/dist/not-a-toast.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.5/dist/not-a-toast.umd.js"></script>
 
   <script>
     function showMyToast() {
@@ -192,6 +192,7 @@ The progress bar visually indicates the remaining duration of the toast. By defa
 - `progressBarColor`: Change the color of the progress bar.
 - `progressBarHeight`: Adjust the height (e.g., `"0.2rem"`).
 - `progressBarPosition`: Position the progress bar at `"top"` or `"bottom"`.
+- `progressBarAnimation`: Apply progress bar animations. There are four types: `"righttoLeft"`, `"lefttoRight"`, `"expand"`, and `"shrink"`.
 
 ```js
 toast({
@@ -199,6 +200,7 @@ toast({
   showProgressBar: true,
   progressBarColor: "white",
   progressBarPosition: "top",
+  progressBarAnimation: "shrink",
 });
 ```
 ### Close Button ( ✕ )
@@ -379,7 +381,7 @@ setTimeout(() => {
 -   **Icons:** `icon`, `iconType`, `iconColor`, `iconBackground`, etc.
 -   **Behavior:** `duration`, `autoClose`, `pauseOnHover`
 -   **Components:**
-    -   **Progress Bar:** `showProgressBar`, `progressBarColor`, `progressBarPosition`
+    -   **Progress Bar:** `showProgressBar`, `progressBarColor`, `progressBarPosition`, `progressBarAnimation`
     -   **Action Button:** `showActionButton`, `actionButtonLabel`, `onAction`
     -   **Close Button:** `showCloseButton`, `closeButtonColor`
 ## Promise Toasts

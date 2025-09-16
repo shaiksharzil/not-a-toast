@@ -42,6 +42,7 @@ function toast(options = {}, config) {
     progressBarColor,
     progressBarHeight = "0.2rem",
     progressBarPosition = "bottom",
+    progressBarAnimation = "rightToLeft",
     background,
     color,
     border,
@@ -82,7 +83,7 @@ function toast(options = {}, config) {
     container.style.position = "fixed";
     container.style.display = "flex";
     container.style.gap = "0.8rem";
-    container.style.zIndex = "1000000";
+    container.style.zIndex = "100000";
     container.style.pointerEvents = "none";
     container.style.width = "100%";
 
@@ -170,18 +171,37 @@ function toast(options = {}, config) {
   document.body.appendChild(tempTheme);
 
   if (!customToast) {
+    const progressBar2 = document.createElement("div");
     const progressBar = document.createElement("div");
+    progressBar2.className = "progress2";
+    progressBar2.style.height = progressBarHeight;
+    progressBar2.style.width = "100%";
+    progressBar2.style.position = "absolute";
+    progressBar2.style.left = 0;
+    progressBar2.style.opacity = 0.5;
     progressBar.className = "progress";
     progressBar.style.height = progressBarHeight;
     progressBar.style.width = "100%";
     progressBar.style.position = "absolute";
-    if (progressBarPosition == "top") progressBar.style.top = 0;
-    else progressBar.style.bottom = 0;
+    if (progressBarPosition == "top") {
+      progressBar.style.top = 0;
+      progressBar2.style.top = 0;
+    } else {
+      progressBar.style.bottom = 0;
+      progressBar2.style.bottom = 0;
+    }
     progressBar.style.left = 0;
-    if (progressBarColor) progressBar.style.background = progressBarColor;
-    else if (color) progressBar.style.background = color;
-    else progressBar.style.background = getComputedStyle(tempTheme).color;
-    progressBar.style.animation = `progress ${
+    if (progressBarColor) {
+      progressBar.style.background = progressBarColor;
+      progressBar2.style.background = progressBarColor;
+    } else if (color) {
+      progressBar.style.background = color;
+      progressBar2.style.background = color;
+    } else {
+      progressBar.style.background = getComputedStyle(tempTheme).color;
+      progressBar2.style.background = getComputedStyle(tempTheme).color;
+    }
+    progressBar.style.animation = `${progressBarAnimation} ${
       duration / 1000
     }s linear forwards`;
 
@@ -196,6 +216,7 @@ function toast(options = {}, config) {
     }
     if (showProgressBar && autoClose) {
       toast.appendChild(progressBar);
+      toast.appendChild(progressBar2);
     }
   }
 
@@ -382,18 +403,22 @@ function toast(options = {}, config) {
       }
     });
   }
-  function toastExit(action) {
-    toast.style.animation = `${exitAnimation} 0.4s ease`;
-    toast.addEventListener(
-      "animationend",
-      () => {
-        toast.remove();
-        if (container.childElementCount === 0) container.remove();
-        resolvePromise({ action });
-      },
-      { once: true }
-    );
-  }
+    function toastExit(action) {
+      toast.classList.remove(entryAnimation);
+      requestAnimationFrame(() => {
+        toast.classList.add(exitAnimation);
+        toast.style.animation = `${exitAnimation} 0.4s ease forwards`;
+        toast.addEventListener(
+          "animationend",
+          () => {
+            toast.remove();
+            if (container.childElementCount === 0) container.remove();
+            resolvePromise({ action });
+          },
+          { once: true }
+        );
+      });
+    }
 
   return controller;
 }
@@ -404,6 +429,7 @@ function updateToast(id, newConfig = {}) {
   const originalConfig = toast._config || {};
   let {
     progressBarPosition = "bottom",
+    progressBarAnimation,
     autoClose = true,
     showProgressBar,
     showActionButton,
@@ -567,14 +593,19 @@ function updateToast(id, newConfig = {}) {
     toast.querySelector(".progress").remove();
   if (showProgressBar && (originalConfig.autoClose || autoClose)) {
     let progressBar;
+    let progressBar2;
     if (originalConfig.showProgressBar == false && showProgressBar == true) {
       progressBar = document.createElement("div");
       progressBar.style.width = "100%";
       progressBar.style.position = "absolute";
       progressBar.style.left = 0;
-      progressBar.style.borderRadius = "0.3rem";
+      progressBar2 = document.createElement("div");
+      progressBar2.style.width = "100%";
+      progressBar2.style.position = "absolute";
+      progressBar2.style.left = 0;
     } else {
       progressBar = toast.querySelector(".progress");
+      progressBar2 = toast.querySelector(".progress2");
     }
     let progressBarHeightTemp = "0.2rem";
     if (
@@ -582,24 +613,48 @@ function updateToast(id, newConfig = {}) {
       progressBarHeight.trim() !== ""
     ) {
       progressBar.style.height = progressBarHeight;
+      progressBar2.style.height = progressBarHeight;
     } else if (
       typeof originalConfig.progressBarHeight === "string" &&
       originalConfig.progressBarHeight.trim() !== ""
     ) {
       progressBar.style.height = originalConfig.progressBarHeight;
-    } else progressBar.style.height = progressBarHeightTemp;
-    if (progressBarPosition == "top") progressBar.style.top = 0;
-    else if (progressBarPosition == "bottom") progressBar.style.bottom = 0;
-    else if (originalConfig.progressBarPosition == "top")
+      progressBar2.style.height = originalConfig.progressBarHeight;
+    } else {
+      progressBar.style.height = progressBarHeightTemp;
+      progressBar2.style.height = progressBarHeightTemp;
+    }
+    if (progressBarPosition == "top") {
       progressBar.style.top = 0;
-    else progressBar.style.bottom = 0;
-    if (newConfig.progressBarColor)
+      progressBar2.style.top = 0;
+    } else if (progressBarPosition == "bottom") {
+      progressBar.style.bottom = 0;
+      progressBar2.style.bottom = 0;
+    } else if (originalConfig.progressBarPosition == "top") {
+      progressBar.style.top = 0;
+      progressBar2.style.top = 0;
+    } else {
+      progressBar.style.bottom = 0;
+      progressBar2.style.bottom = 0;
+    }
+    if (newConfig.progressBarColor) {
       progressBar.style.background = newConfig.progressBarColor;
-    else if (originalConfig.progressBarColor)
+      progressBar2.style.background = newConfig.progressBarColor;
+    } else if (originalConfig.progressBarColor) {
       progressBar.style.background = originalConfig.progressBarColor;
-    else if (newConfig.color) progressBar.style.background = newConfig.color;
-    else progressBar.style.background = getComputedStyle(tempTheme).color;
-    progressBar.style.animation = `progress ${
+      progressBar2.style.background = originalConfig.progressBarColor;
+    } else if (newConfig.color) {
+      progressBar.style.background = newConfig.color;
+      progressBar2.style.background = newConfig.color;
+    } else {
+      progressBar.style.background = getComputedStyle(tempTheme).color;
+      progressBar2.style.background = getComputedStyle(tempTheme).color;
+    }
+    if (progressBarAnimation) progressBarAnimation = progressBarAnimation;
+    else if (originalConfig.progressBarAnimation)
+      progressBarAnimation = originalConfig.progressBarAnimation;
+    else progressBarAnimation = "rightToLeft";
+    progressBar.style.animation = `${progressBarAnimation} ${
       duration / 1000
     }s linear forwards`;
 
@@ -613,6 +668,7 @@ function updateToast(id, newConfig = {}) {
       });
     }
     toast.appendChild(progressBar);
+    toast.appendChild(progressBar2);
   }
   if (
     showActionButton == false &&
@@ -659,10 +715,10 @@ function updateToast(id, newConfig = {}) {
     if (newConfig.actionButtonShadow)
       actionBtn.style.shadow = newConfig.actionButtonShadow;
     toast.appendChild(actionBtn);
-    const controller = toast._controller; // <-- use the original controller
+    const controller = toast._controller; 
     actionBtn.addEventListener("click", () => {
       if (typeof newConfig.onAction === "function") {
-        newConfig.onAction(controller); // ← now x.close() works!
+        newConfig.onAction(controller); 
       }
     });
   }
