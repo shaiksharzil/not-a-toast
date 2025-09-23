@@ -53,13 +53,13 @@ Use this method for quick demos or projects without a build step.
 <head>
   <title>Not-a-Toast Demo</title>
   // Stylesheet CDN
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.8/dist/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.1/dist/style.css">
 </head>
 <body>
 
   <button onclick="showMyToast()">Show Toast!</button>
   script CDN
-  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.8/dist/not-a-toast.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.1/dist/not-a-toast.umd.js"></script>
 
   <script>
     function showMyToast() {

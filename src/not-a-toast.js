@@ -882,7 +882,7 @@ function updateToast(id, newConfig = {}) {
   document.body.removeChild(tempTheme);
 }
 
-function removeAllToasts() {
+export function removeAllToasts() {
   document
     .querySelectorAll(".notAToasttoast-container")
     .forEach((el) => el.remove());
