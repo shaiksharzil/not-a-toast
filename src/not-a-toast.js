@@ -42,7 +42,7 @@ function toast(options = {}, config) {
     progressBarColor,
     progressBarHeight = "0.2rem",
     progressBarPosition = "bottom",
-    progressBarAnimation = "rightToLeft",
+    progressBarAnimation = "shrinkRight",
     background,
     color,
     border,
@@ -68,18 +68,21 @@ function toast(options = {}, config) {
     actionButtonOpacity,
     actionButtonShadow,
     iconType,
+    showIcon = false,
     icon,
     iconBackground,
     iconColor,
     iconBorderRadius = "50%",
-    iconAnimation = "iconPulse",
+    iconAnimation = "default",
     iconTimingFunction = "ease",
     customToast,
   } = options;
-  let container = document.querySelector(`.toast-container.${position}`);
+  let container = document.querySelector(
+    `.notAToasttoast-container.${position}`
+  );
   if (!container) {
     container = document.createElement("div");
-    container.classList.add("toast-container", position);
+    container.classList.add("notAToasttoast-container", position);
     container.style.position = "fixed";
     container.style.display = "flex";
     container.style.gap = "0.8rem";
@@ -135,7 +138,7 @@ function toast(options = {}, config) {
   toast.id = id;
   toast._config = { ...options };
   if (!customToast) {
-    toast.className = `${theme}`;
+    toast.className = `${"notAToast" + theme}`;
     toast.style.padding = "0.85rem 1rem";
     toast.style.position = "relative";
     toast.style.display = "flex";
@@ -155,7 +158,7 @@ function toast(options = {}, config) {
   }
   if (customToast) {
     toast.innerHTML = customToast;
-    const customCloseBtn = toast.querySelector(".close-btn");
+    const customCloseBtn = toast.querySelector(".toastCloseButton");
     if (customCloseBtn) {
       customCloseBtn.addEventListener("click", () => {
         clearTimeout(timeout);
@@ -164,23 +167,23 @@ function toast(options = {}, config) {
     }
   }
   toast.style.pointerEvents = "auto";
-  toast.style.animation = `${entryAnimation} 0.4s ease`;
+  toast.style.animation = `${"notAToast" + entryAnimation} 0.4s ease`;
 
   const tempTheme = document.createElement("div");
-  tempTheme.className = `${theme}`;
+  tempTheme.className = `${"notAToast" + theme}`;
   tempTheme.style.display = "none";
   document.body.appendChild(tempTheme);
 
   if (!customToast) {
     const progressBar2 = document.createElement("div");
     const progressBar = document.createElement("div");
-    progressBar2.className = "progress2";
+    progressBar2.className = "notAToastprogress2";
     progressBar2.style.height = progressBarHeight;
     progressBar2.style.width = "100%";
     progressBar2.style.position = "absolute";
     progressBar2.style.left = 0;
     progressBar2.style.opacity = 0.5;
-    progressBar.className = "progress";
+    progressBar.className = "notAToastprogress";
     progressBar.style.height = progressBarHeight;
     progressBar.style.width = "100%";
     progressBar.style.position = "absolute";
@@ -202,7 +205,7 @@ function toast(options = {}, config) {
       progressBar.style.background = getComputedStyle(tempTheme).color;
       progressBar2.style.background = getComputedStyle(tempTheme).color;
     }
-    progressBar.style.animation = `${progressBarAnimation} ${
+    progressBar.style.animation = `${"notAToast" + progressBarAnimation} ${
       duration / 1000
     }s linear forwards`;
 
@@ -226,9 +229,9 @@ function toast(options = {}, config) {
       /rgba?\(\s*\d+,\s*\d+,\s*\d+,\s*([0-9.]+)\s*\)/
     );
 
-    if (iconType || icon) {
-      const Icon = document.createElement("div");
-      Icon.className = "icon";
+    const Icon = document.createElement("div");
+    Icon.className = "notAToasticon";
+    if (showIcon && (iconType || icon)) {
       if (
         (iconType == "success" ||
           iconType == "error" ||
@@ -260,15 +263,15 @@ function toast(options = {}, config) {
           Icon.style.border = `3px solid rgba(255, 255, 255, 0.2)`;
           Icon.style.borderTop = "3px solid white";
           Icon.style.borderRadius = "50%";
-          Icon.style.width = "1.2rem";
-          Icon.style.height = "1.2rem";
+          Icon.style.width = "1.3rem";
+          Icon.style.height = "1.3rem";
           Icon.style.background = "transparent";
           Icon.style.borderTop = `3px solid ${
             getComputedStyle(tempTheme).color
           }`;
           if (color) Icon.style.borderTop = `3px solid ${color}`;
           if (iconColor) Icon.style.borderTop = `3px solid ${iconColor}`;
-          Icon.style.animation = "spin 0.4s infinite";
+          Icon.style.animation = "notAToastspin 0.4s infinite";
         }
         if (iconType == "success") Icon.innerHTML = "&#10004";
         if (iconType == "error") Icon.innerHTML = "&#x2718";
@@ -281,7 +284,7 @@ function toast(options = {}, config) {
       if (icon) Icon.innerHTML = icon;
       if (iconBackground) Icon.style.background = iconBackground;
       if (iconColor) Icon.style.color = iconColor;
-      Icon.style.fontSize = "1.2rem";
+      Icon.style.fontSize = "1rem";
       Icon.style.height = "1.3rem";
       Icon.style.width = "1.3rem";
       Icon.style.display = "flex";
@@ -290,11 +293,13 @@ function toast(options = {}, config) {
       Icon.style.borderRadius = iconBorderRadius;
       Icon.style.marginRight = "0.5rem";
       if (!(iconType == "loader"))
-        Icon.style.animation = `${iconAnimation} 0.6s ${iconTimingFunction}`;
-      toast.appendChild(Icon);
+        Icon.style.animation = `${
+          "notAToastIcon" + iconAnimation
+        } 0.4s ${iconTimingFunction}`;
     }
+    toast.appendChild(Icon);
     const toastMessage = document.createElement("div");
-    toastMessage.className = "message";
+    toastMessage.className = "notAToastmessage";
     toastMessage.innerHTML = `${message.replace(/\n/g, "<br>")}`;
     toastMessage.style.flex = "1";
     toastMessage.style.maxWidth = "19rem";
@@ -321,7 +326,9 @@ function toast(options = {}, config) {
   if (!customToast) {
     if (showActionButton && actionButtonLabel) {
       const actionBtn = document.createElement("div");
-      actionBtn.className = `actionBtn ${actionButtonTheme}`;
+      actionBtn.className = `notAToastactionBtn ${
+        "notAToast" + actionButtonTheme
+      }`;
       actionBtn.textContent = actionButtonLabel;
       actionBtn.style.cursor = "pointer";
       actionBtn.style.padding = actionButtonPadding;
@@ -359,7 +366,7 @@ function toast(options = {}, config) {
 
     if (showCloseButton) {
       const closeBtn = document.createElement("div");
-      closeBtn.className = "clsBtn";
+      closeBtn.className = "notAToastclsBtn";
       closeBtn.innerHTML = "&#10005";
       closeBtn.style.cursor = "pointer";
       closeBtn.style.marginLeft = "0.9rem";
@@ -404,22 +411,24 @@ function toast(options = {}, config) {
       }
     });
   }
-    function toastExit(action) {
-      toast.classList.remove(entryAnimation);
-      requestAnimationFrame(() => {
-        toast.classList.add(exitAnimation);
-        toast.style.animation = `${exitAnimation} 0.4s ease forwards`;
-        toast.addEventListener(
-          "animationend",
-          () => {
-            toast.remove();
-            if (container.childElementCount === 0) container.remove();
-            resolvePromise({ action });
-          },
-          { once: true }
-        );
-      });
-    }
+  function toastExit(action) {
+    toast.classList.remove(`${"notAToast" + entryAnimation}`);
+    requestAnimationFrame(() => {
+      toast.classList.add(`${"notAToast" + exitAnimation}`);
+      toast.style.animation = `${
+        "notAToast" + exitAnimation
+      } 0.4s ease forwards`;
+      toast.addEventListener(
+        "animationend",
+        () => {
+          toast.remove();
+          if (container.childElementCount === 0) container.remove();
+          resolvePromise({ action });
+        },
+        { once: true }
+      );
+    });
+  }
 
   return controller;
 }
@@ -442,6 +451,7 @@ function updateToast(id, newConfig = {}) {
     actionButtonLabel = originalConfig.actionButtonLabel,
     showCloseButton,
     pauseOnHover,
+    showIcon,
   } = newConfig;
 
   let showProgressBarTemp;
@@ -476,23 +486,36 @@ function updateToast(id, newConfig = {}) {
   if (originalConfig.pauseOnHover == false) {
     pauseOnHoverTemp = false;
   } else pauseOnHoverTemp = true;
-  if (pauseOnHover == true) {
+  if (newConfig.pauseOnHover == true) {
     pauseOnHoverTemp = true;
-  } else if (pauseOnHover == false) pauseOnHoverTemp = false;
-  pauseOnHover = pauseOnHoverTemp;
+  } else if (newConfig.pauseOnHover == false) {
+    pauseOnHoverTemp = false;
+  }
+  newConfig.pauseOnHover = pauseOnHoverTemp;
 
   const mergedConfig = { ...originalConfig, ...newConfig };
   let { duration = 3000 } = mergedConfig;
   toast._config = mergedConfig;
-  if (duration > 0) {
+  if (toast._remaining !== undefined) {
+    duration = toast._remaining;
+  }
+
+  if (duration > 0 && autoClose) {
+    clearTimeout(toast._timeout);
+    toast._startTime = Date.now();
+    toast._remaining = duration;
     toast._timeout = setTimeout(() => {
-      if (autoClose) {
-        toast.remove();
+      toast.remove();
+      const container = toast.parentElement;
+      if (container && container.childElementCount === 0) {
+        container.remove();
       }
     }, duration);
   }
 
-  if (pauseOnHover && autoClose) {
+  toast._config = mergedConfig;
+
+  if (newConfig.pauseOnHover && autoClose) {
     if (!toast._hoverListenerAdded) {
       toast._hoverListenerAdded = true;
 
@@ -531,13 +554,13 @@ function updateToast(id, newConfig = {}) {
     toast.className = "";
     toast.innerHTML = newConfig.customToast;
 
-    const closeBtn = toast.querySelector(".close-btn");
+    const closeBtn = toast.querySelector(".toastCloseButton");
     if (closeBtn) {
+      console.log(closeBtn);
       closeBtn.addEventListener("click", () => {
         toast.style.animation = `${
-          newConfig.exitAnimation || "fadeOut"
+          "notAToast" + (newConfig.exitAnimation || "fadeOut")
         } 0.4s ease`;
-
         toast.addEventListener(
           "animationend",
           () => {
@@ -556,7 +579,7 @@ function updateToast(id, newConfig = {}) {
       clearTimeout(toast._timeout);
       toast._timeout = setTimeout(() => {
         toast.style.animation = `${
-          newConfig.exitAnimation || "fadeOut"
+          "notAToast" + (newConfig.exitAnimation || "fadeOut")
         } 0.4s ease`;
         toast.addEventListener(
           "animationend",
@@ -573,7 +596,7 @@ function updateToast(id, newConfig = {}) {
     }
     return;
   }
-  if (newConfig.theme) toast.className = newConfig.theme;
+  if (newConfig.theme) toast.className = `${"notAToast" + newConfig.theme}`;
   if (newConfig.border) toast.style.border = newConfig.border;
   if (newConfig.opacity) toast.style.opacity = newConfig.opacity;
   if (newConfig.borderRadius) toast.style.borderRadius = newConfig.borderRadius;
@@ -590,8 +613,10 @@ function updateToast(id, newConfig = {}) {
     showProgressBar == false &&
     (originalConfig.showProgressBar ||
       originalConfig.showProgressBar == undefined)
-  )
-    toast.querySelector(".progress").remove();
+  ) {
+    toast.querySelector(".notAToastprogress").remove();
+    toast.querySelector(".notAToastprogress2").remove();
+  }
   if (showProgressBar && (originalConfig.autoClose || autoClose)) {
     let progressBar;
     let progressBar2;
@@ -605,8 +630,8 @@ function updateToast(id, newConfig = {}) {
       progressBar2.style.position = "absolute";
       progressBar2.style.left = 0;
     } else {
-      progressBar = toast.querySelector(".progress");
-      progressBar2 = toast.querySelector(".progress2");
+      progressBar = toast.querySelector(".notAToastprogress");
+      progressBar2 = toast.querySelector(".notAToastprogress2");
     }
     let progressBarHeightTemp = "0.2rem";
     if (
@@ -653,13 +678,15 @@ function updateToast(id, newConfig = {}) {
     }
     if (progressBarAnimation) progressBarAnimation = progressBarAnimation;
     else if (originalConfig.progressBarAnimation)
-      progressBarAnimation = originalConfig.progressBarAnimation;
-    else progressBarAnimation = "rightToLeft";
-    progressBar.style.animation = `${progressBarAnimation} ${
+      progressBarAnimation = `${
+        "notAToast" + originalConfig.progressBarAnimation
+      }`;
+    else progressBarAnimation = "shrinkRight";
+    progressBar.style.animation = `${"notAToast" + progressBarAnimation} ${
       duration / 1000
     }s linear forwards`;
 
-    if (pauseOnHover) {
+    if (newConfig.pauseOnHover) {
       toast.addEventListener("mouseenter", () => {
         progressBar.style.animationPlayState = "paused";
       });
@@ -667,16 +694,21 @@ function updateToast(id, newConfig = {}) {
       toast.addEventListener("mouseleave", () => {
         progressBar.style.animationPlayState = "running";
       });
+    } else {
+      toast.addEventListener("mouseenter", () => {
+        progressBar.style.animationPlayState = "running";
+      });
     }
     toast.appendChild(progressBar);
     toast.appendChild(progressBar2);
   }
+  if (!autoClose) toast.querySelector(".notAToastprogress2").remove();
   if (
     showActionButton == false &&
     (originalConfig.showActionButton ||
       originalConfig.showActionButton == undefined)
   ) {
-    toast.querySelector(".progress").remove();
+    toast.querySelector(".notAToastprogress").remove();
   }
   if (showActionButton && actionButtonLabel) {
     let actionBtn;
@@ -687,8 +719,8 @@ function updateToast(id, newConfig = {}) {
       actionBtn.style.borderRadius = actionButtonBorderRadius;
       actionBtn.style.margin = actionButtonMargin;
       actionBtn.style.overflow = "hidden";
-    } else actionBtn = toast.querySelector(".actionBtn");
-    actionBtn.className += ` ${actionButtonTheme}`;
+    } else actionBtn = toast.querySelector(".notAToastactionBtn");
+    actionBtn.className += ` ${"notAToast" + actionButtonTheme}`;
     actionBtn.textContent = actionButtonLabel;
     let borStr = getComputedStyle(tempTheme).border;
     if (
@@ -716,10 +748,10 @@ function updateToast(id, newConfig = {}) {
     if (newConfig.actionButtonShadow)
       actionBtn.style.shadow = newConfig.actionButtonShadow;
     toast.appendChild(actionBtn);
-    const controller = toast._controller; 
+    const controller = toast._controller;
     actionBtn.addEventListener("click", () => {
       if (typeof newConfig.onAction === "function") {
-        newConfig.onAction(controller); 
+        newConfig.onAction(controller);
       }
     });
   }
@@ -727,7 +759,7 @@ function updateToast(id, newConfig = {}) {
     originalConfig.showCloseButton ||
     originalConfig.showCloseButton == undefined
   )
-    toast.querySelector(".clsBtn").remove();
+    toast.querySelector(".notAToastclsBtn").remove();
   if (showCloseButton) {
     const closeBtn = document.createElement("div");
     closeBtn.innerHTML = "&#10005";
@@ -743,14 +775,18 @@ function updateToast(id, newConfig = {}) {
       toast.remove();
     });
   }
+  if (newConfig.showIcon == false || newConfig.showIcon) {
+    showIcon = newConfig.showIcon;
+  } else showIcon = originalConfig.showIcon;
   if (
-    newConfig.iconType ||
-    newConfig.icon ||
-    originalConfig.iconType ||
-    originalConfig.icon
+    showIcon &&
+    (newConfig.iconType ||
+      newConfig.icon ||
+      originalConfig.iconType ||
+      originalConfig.icon)
   ) {
-    let iconElement = toast.querySelector(".icon");
-    if (!iconElement) return;
+    let iconElement = toast.querySelector(".notAToasticon");
+    iconElement.style.marginRight = "0.5rem";
     const iconType = newConfig.iconType || originalConfig.iconType;
     const icon = newConfig.icon || originalConfig.icon;
     const background = newConfig.background || originalConfig.background;
@@ -760,13 +796,14 @@ function updateToast(id, newConfig = {}) {
       newConfig.iconBackground || originalConfig.iconBackground;
     const iconBorderRadius =
       newConfig.iconBorderRadius || originalConfig.iconBorderRadius || "50%";
-    const iconAnimation =
-      newConfig.iconAnimation || originalConfig.iconAnimation || "iconPulse";
+    const iconAnimation = `${
+      "notAToastIcon" +
+      (newConfig.iconAnimation || originalConfig.iconAnimation || "default")
+    }`;
     const iconTimingFunction =
       newConfig.iconTimingFunction ||
       originalConfig.iconTimingFunction ||
       "ease";
-
     iconElement.className = "";
     iconElement.innerHTML = "";
     iconElement.style.borderTop = "";
@@ -790,11 +827,11 @@ function updateToast(id, newConfig = {}) {
         iconElement.style.border = `3px solid rgba(255, 255, 255, 0.2)`;
         iconElement.style.borderTop = "3px solid white";
         iconElement.style.borderRadius = "50%";
-        iconElement.style.width = "1.2rem";
-        iconElement.style.height = "1.2rem";
+        iconElement.style.width = "1.3rem";
+        iconElement.style.height = "1.3rem";
         iconElement.style.background = "transparent";
         iconElement.style.borderTop = `3px solid ${iconColor || color || fg}`;
-        iconElement.style.animation = "spin 0.4s infinite";
+        iconElement.style.animation = "notAToastspin 0.4s infinite";
       }
 
       if (iconType === "success") iconElement.innerHTML = "&#10004";
@@ -811,13 +848,22 @@ function updateToast(id, newConfig = {}) {
     if (iconColor) iconElement.style.color = iconColor;
     if (iconBackground) iconElement.style.background = iconBackground;
     iconElement.style.borderRadius = iconBorderRadius;
+    iconElement.style.fontSize = "1rem";
+    iconElement.style.height = "1.3rem";
+    iconElement.style.width = "1.3rem";
+    iconElement.style.display = "flex";
+    iconElement.style.alignItems = "center";
+    iconElement.style.justifyContent = "center";
     if (iconType !== "loader" || icon) {
-      iconElement.style.animation = `${iconAnimation} 0.6s ${iconTimingFunction}`;
+      iconElement.style.animation = `${iconAnimation}  0.4s ${iconTimingFunction}`;
+      iconElement.style.border = "";
     }
+  } else {
+    toast.querySelector(".notAToasticon").remove();
   }
 
   if (newConfig.message) {
-    const msgElement = toast.querySelector(".message");
+    const msgElement = toast.querySelector(".notAToastmessage");
     if (msgElement) {
       msgElement.innerHTML = newConfig.message.replace(/\n/g, "<br>");
     }
@@ -826,7 +872,7 @@ function updateToast(id, newConfig = {}) {
     clearTimeout(toast._timeout);
     toast._timeout = setTimeout(() => {
       toast.style.animation = `${
-        newConfig.exitAnimation || "fadeOut"
+        "notAToast" + (newConfig.exitAnimation || "fadeOut")
       } 0.4s ease`;
       toast.addEventListener("animationend", () => toast.remove(), {
         once: true,
@@ -834,6 +880,12 @@ function updateToast(id, newConfig = {}) {
     }, newConfig.duration);
   }
   document.body.removeChild(tempTheme);
+}
+
+function removeAllToasts() {
+  document
+    .querySelectorAll(".notAToasttoast-container")
+    .forEach((el) => el.remove());
 }
 
 export default toast;

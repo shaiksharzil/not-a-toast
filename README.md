@@ -6,10 +6,10 @@
 ## Key Features of `not-a-toast`
 - Lightweight & Easy to Use
 - Fully Customizable Toasts
-- 40+ Built-in Visual Themes
+- 40 Built-in Visual Themes
 - Custom Toast Support
 - Reverse Toast Order
-- 20 Entry & Exit Animations
+- 33 Entry & Exit Animations
 - Async (Promise) Toast Support
 - Toast Update Support
 - Auto-Close & Duration Control
@@ -17,6 +17,7 @@
 - Action Button with Callback
 - Rich Icon System & Animations
 - Custom HTML Toast Content
+- Remove All Toast Fuction
 
 ## Demo
 Check out the live demo to see not-a-toast in action:https://not-a-toast.vercel.app/
@@ -51,14 +52,14 @@ Use this method for quick demos or projects without a build step.
 <html>
 <head>
   <title>Not-a-Toast Demo</title>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.7/dist/style.css">
+  // Stylesheet CDN
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.8/dist/style.css">
 </head>
 <body>
 
   <button onclick="showMyToast()">Show Toast!</button>
-
-  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.7/dist/not-a-toast.umd.js"></script>
+  script CDN
+  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.0.8/dist/not-a-toast.umd.js"></script>
 
   <script>
     function showMyToast() {
@@ -69,8 +70,8 @@ Use this method for quick demos or projects without a build step.
 </body>
 </html>
 ```
-
-#### Basic Usage
+## Documentation
+### Basic Usage
 To display a basic toast notification, simply call the `toast()` function with a message:
 ```js
 toast({ message: "Hello not-a-toast" });
@@ -115,14 +116,42 @@ If set to `true`, new toasts will appear below existing toasts in the same posit
 toast({ message: "orderReversed", orderReversed: true });
 ```
 ### Entry animation
-Specifies the animation applied when the toast enters the viewport. Choose from 20 exciting animations: `fadeIn`, `zoomIn`, `slideInLeft`, `slideInRight`, `slideInUp`,`slideInDown`, `bounceIn`, `flipInX`, `flipInY`, `rotateIn`, `punchIn`, `bubbleUp`, `swirlIn`, `wobbleIn`, `tiltUp`, `windRightIn`, `windLeftIn` , `squeezeIn`, `fadeSlideZoomIn`, `helixSpinIn`, `meteorDropIn`, `portalIn`, `cubeSpinIn`
+Specifies the animation applied when the toast enters the viewport. Choose from 20 exciting animations: `fadeIn`, `zoomIn`, `slideInLeft`, `slideInRight`, `slideInUp`,`slideInDown`, `bounceIn`, `flipInX`, `flipInY`, `rotateIn`, `punchIn`, `bubbleUp`, `swirlIn`, `wobbleIn`, `tiltUp`, `windRightIn`, `windLeftIn` , `squeezeIn`, `fadeSlideZoomIn`, `helixSpinIn`, `meteorDropIn`, `portalIn`, `cubeSpinIn`, `jellyPopIn`, `rippleIn`, `glitchIn`, `swingDownIn`, `glideIn`, `curtainIn`, `slinkyIn`, `sparkIn`, `dustIn`, and `driftIn`
 ```js
-toast({ message: "entryAnimation", entryAnimation: "slideInLeft" }):
+toast({ message: "entryAnimation", entryAnimation: "dustIn" }):
 ```
 ### Exit animation
-Specifies the animation applied when the toast exits the viewport. Choose from 20 exciting animations: `fadeOut`, `zoomOut`, `slideOutLeft`, `slideOutRight`, `slideOutUp`, `slideOutDown`, `bounceOut`, `flipOutX`, `flipOutY`, `rotateOut`, `punchOut`, `bubbleDown`, `swirlOut`, `wobbleOut`, `tiltDown`, `windRightOut`, `windLeftOut`, `squeezeOut`, `fadeSlideZoomOut`, `helixSpinOut`, `meteorZoomOut`, `portalOut`, `cubeSpinOut`
+Specifies the animation applied when the toast exits the viewport. Choose from 20 exciting animations: `fadeOut`, `zoomOut`, `slideOutLeft`, `slideOutRight`, `slideOutUp`, `slideOutDown`, `bounceOut`, `flipOutX`, `flipOutY`, `rotateOut`, `punchOut`, `bubbleDown`, `swirlOut`, `wobbleOut`, `tiltDown`, `windRightOut`, `windLeftOut`, `squeezeOut`, `fadeSlideZoomOut`, `helixSpinOut`, `meteorZoomOut`, `portalOut`, `cubeSpinOut`, `jellyPopOut`, `rippleOut`, `glitchOut`, `swingUpOut`, `glideOut`, `curtainOut`, `slinkyOut`, `sparkOut`, `dustOut`, and `driftOut`
 ```js
-toast({ message: "exitAnimation", exitAnimation: "slideOutLeft" });
+toast({ message: "exitAnimation", exitAnimation: "dustOut" });
+```
+
+### Custom Entry and Exit Animations
+You can provide custom entry and exit animations by creating CSS `@keyframes` with your desired styles. 
+
+**Important:** Add the prefix `notAToast` to your animation names in CSS, but when passing them to the `toast` function, provide the name without the prefix.
+
+```css
+/* In your CSS file */
+/* Add the prefix notAToast to your animation names in CSS */
+
+@keyframes notAToastfoldIn {
+  0% { transform: scaleY(0) rotateX(-90deg); opacity: 0; transform-origin: top; }
+  100% { transform: scaleY(1) rotateX(0); opacity: 1; }
+}
+
+@keyframes notAToastfoldOut {
+  0% { transform: scaleY(1) rotateX(0); opacity: 1; }
+  100% { transform: scaleY(0) rotateX(90deg); opacity: 0; }
+}
+```
+```js
+// javascript
+toast({
+  message: 'This toast uses Fold animations',
+  entryAnimation: 'foldIn', // without 'notAToast' prefix
+  exitAnimation: 'foldOut'  // without 'notAToast' prefix
+});
 ```
 ### Themes
 Apply a predefined theme to your toast. There are over 40 themes available, categorized as follows:
@@ -143,9 +172,12 @@ toast({ message: "Themes", theme: "liquidGlass" });
 ```
 #### Custom Themes
 You can define your own custom theme by creating a CSS class with your desired styles and passing its name to
+
+**Important:** Add the prefix `notAToast` to your CSS class name, but when passing it to the `toast` function, use the name without the prefix.
 ```css
 /* In your CSS file */
-.customTheme {
+/* Add the prefix notAToast to your CSS class name */
+.notAToastcustomTheme {
    background: linear-gradient(to right, #4caf50, #8bc34a);
    color: white;
    border: 2px solid #388e3c;
@@ -154,7 +186,10 @@ You can define your own custom theme by creating a CSS class with your desired s
 ```
 ```js
 //javascript
-toast({ message: "Custom theme", theme: "customTheme" });
+toast({ 
+  message: "Custom theme", 
+  theme: "customTheme"  // without 'notAToast' prefix
+});
 ```
 ### Styling Toast
 You can directly style individual toasts by passing CSS properties as options. This allows for fine-grained control over the toast's appearance.
@@ -164,7 +199,6 @@ Available styling properties: `background`, `color`, `border`, `borderRadius`, `
 ```js
 toast({
   message: "Styling toast",
-  theme: "customTheme", // You can combine with a theme or use only styling
   background: "green",
   color: "white",
   borderRadius: "10px",
@@ -194,7 +228,7 @@ The progress bar visually indicates the remaining duration of the toast. By defa
 - `progressBarColor`: Change the color of the progress bar.
 - `progressBarHeight`: Adjust the height (e.g., `"0.2rem"`).
 - `progressBarPosition`: Position the progress bar at `"top"` or `"bottom"`.
-- `progressBarAnimation`: Apply progress bar animations. There are four types: `"righttoLeft"`, `"lefttoRight"`, `"expand"`, and `"shrink"`.
+- `progressBarAnimation`: Apply progress bar animations. There are six types: `"slideInLeft"`, `"slideInRight"`, `"shrinkLeft"`, `"shrinkRight"`, `"expand"`and `"collapse"`.
 
 ```js
 toast({
@@ -202,9 +236,29 @@ toast({
   showProgressBar: true,
   progressBarColor: "white",
   progressBarPosition: "top",
-  progressBarAnimation: "shrink",
+  progressBarAnimation: "collapse",
 });
 ```
+### Custom Progress Bar Animation
+You can also define a custom progress bar animation by creating your own CSS `@keyframes`.
+
+**Important:** Prefix the animation name with `notAToast` in CSS, but when passing it to the `toast` function, provide the name without the prefix.
+```css
+/* In your CSS file */
+/* Add the prefix notAToast to your animation names in CSS */
+@keyframes notAToastslideProgress {
+  0% { width: 100%; background: limegreen; }
+  50% { width: 50%; background: orange; }
+  100% { width: 0%; background: red; }
+}
+```
+```js
+toast({
+  message: 'This toast has a custom progress bar',
+  progressBarAnimation: 'slideProgress' // without 'notAToast' prefix
+});
+```
+
 ### Close Button ( ✕ )
 A customizable close button allows users to dismiss the toast.
 - `showCloseButton`: `true` by default. Set to `false` to hide.
@@ -256,6 +310,42 @@ toast({
 ```js
 onAction: (x) => { x.close() },
 ```
+### Custom Action Button Theme
+You can customize the action button by defining your own CSS theme class.
+
+**Important:** Prefix the class name with `notAToast` in CSS, but when passing it to the `toast` function, provide the name without the prefix.
+```css
+/* In your CSS file */
+/* Add the prefix notAToast to your CSS class name */
+.notAToastmyButtonTheme {
+  background: linear-gradient(135deg, #6366f1, #4338ca); /* Indigo gradient */
+  color: #fff;
+  border: none;
+  border-radius: 999px; /* pill-shaped */
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(67, 56, 202, 0.3);
+  transition: all 0.3s ease;
+}
+
+.notAToastmyButtonTheme:hover {
+  background: linear-gradient(135deg, #4f46e5, #312e81);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 14px rgba(67, 56, 202, 0.4);
+}
+```
+```js
+toast({
+    message: "This toast has a custom action button theme",
+    showActionButton: true,
+    actionButtonLabel: "Close",
+    actionButtonTheme: "myButtonTheme", // without 'notAToast' prefix
+    onAction: (x) => { x.close() }, 
+  });
+```
 ### Icons
 Add an icon to the beginning of your toast message for better visual communication.
 - `showIcon`: `false` by default. Set to `true` to display an icon.
@@ -291,12 +381,7 @@ toast({
 ```
 #### Icon Animation
 Apply animations to your icons for more dynamic feedback.
-- `iconAnimation`: Default is `"iconPulse"`. Available animations:
-- `iconBounce`
-- `iconSpin`
-- `iconPulse`
-- `iconWave`
-- `iconFloat`
+- `iconAnimation`: Apply icon animations. There are 11 types: `default`, `bounce`, `spin`, `pulse`, `wave`, `flipX`, `flipY`, `shakeX`, `shakeY`, `jelly` and `rubberBand`
 - `iconTimingFunction`: Animation timing function (e.g., `"ease"`, `"infinite"`).
 
 ```js
@@ -304,10 +389,34 @@ toast({
   message: "Icon Animation",
   showIcon: true,
   icon: "🚀",
-  iconAnimation: "iconBounce",
+  iconAnimation: "jelly",
   iconTimingFunction: "infinite",
 });
 ```
+### Custom Icon Animation
+You can also define a custom animation for the toast icon using CSS `@keyframes`.
+
+**Important:** Prefix the animation name with `notAToastIcon` in CSS, but when passing it to the `toast` function, provide the name without the prefix.
+```css
+/* In your CSS file */
+/* Add the prefix notAToastIcon to your animation names in CSS */
+@keyframes notAToastIcontada {
+  0% { transform: scale(1); }
+  10%, 20% { transform: scale(0.7) rotate(-6deg); }
+  30%, 50%, 70%, 90% { transform: scale(1.3) rotate(6deg); }
+  40%, 60%, 80% { transform: scale(1.3) rotate(-6deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+```
+```js
+toast({
+    message: "Tada icon animation",
+    showIcon: true,
+    icon: "🎉",
+    iconAnimation: "tada", // without 'notAToastIcon' prefix
+});
+```
+
 ### Reusable Toast Styling: Define Once, Use Anywhere
 #### Define the Styling Once
 ```js
@@ -328,7 +437,7 @@ toast({...styling, message: "Another toast with the same style!", position: "bot
 ### Custom Toast Content
 For ultimate flexibility, you can provide your own HTML structure for the toast content. When using a custom toast, you still have access to `duration`, `entryAnimation`, `exitAnimation`, `pauseOnHover`, and `position`.
 
-**Important:** To enable closing your custom toast, ensure you include an element with the class `close-btn` within your custom HTML. Clicking this element will dismiss the toast.
+**Important:** To enable closing your custom toast, ensure you include an element with the class `toastCloseButton` within your custom HTML. Clicking this element will dismiss the toast.
 
 
 
@@ -346,7 +455,7 @@ toast({
            <p class="notify-toast-message">You have a new message waiting.</p>
         </div>
        <div class="notify-toast-close">
-           <button class="close-btn">&times;</button>
+           <button class="toastCloseButton">&times;</button>
         </div>
     </div>`,
   duration: 5000,
@@ -419,5 +528,12 @@ async function testApiToast() {
 
 testApiToast();
 ```
+
+## Remove All Toasts
+You can remove all active toasts by calling the following function:
+```js
+removeAllToasts()
+```
+
 ## Support
 If you find this library useful, please consider giving it a star ⭐ on GitHub! Your support helps motivate me to maintain and improve it.

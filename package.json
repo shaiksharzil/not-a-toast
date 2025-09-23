@@ -20,10 +20,40 @@
   },
   "keywords": [
     "toast",
+    "toast notifications",
+    "toast library",
+    "javascript toast",
     "notification",
+    "notification library",
     "alert",
-    "message",
-    "not-a-toast"
+    "alert popup",
+    "snackbar",
+    "popup notification",
+    "message notification",
+    "custom toast",
+    "custom notifications",
+    "lightweight toast",
+    "minimal toast",
+    "animated toast",
+    "themeable toast",
+    "css animations",
+    "toast message",
+    "toast popup",
+    "snackbar notifications",
+    "toastr alternative",
+    "toastify alternative",
+    "not-a-toast",
+    "react toast",
+    "react notifications",
+    "nextjs toast",
+    "nextjs notifications",
+    "vite toast",
+    "vite notifications",
+    "vanilla js toast",
+    "vanilla javascript notifications",
+    "frontend toast library",
+    "browser toast notifications",
+    "npm toast library"
   ],
   "author": "Shaik Sharzil",
   "license": "MIT",
@@ -34,7 +64,7 @@
   "bugs": {
     "url": "https://github.com/shaiksharzil/not-a-toast/issues"
   },
-  "homepage": "https://github.com/shaiksharzil/not-a-toast#readme",
+  "homepage": "https://not-a-toast.vercel.app",
   "devDependencies": {
     "vite": "^5.4.20"
   }

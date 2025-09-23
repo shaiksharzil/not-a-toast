@@ -1,6 +1,6 @@
 
 /* themes */
-.glassmorphism {
+.notAToastglassmorphism {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
@@ -9,13 +9,13 @@
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.neumorphic {
+.notAToastneumorphic {
   background: #e0e0e0;
   color: #333;
   box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
   border-radius: 12px;
 }
-.neumorphicDark {
+.notAToastneumorphicDark {
   background: #1e1e1e;
   color: #e0e0e0;
   box-shadow: inset 4px 4px 8px #141414, inset -4px -4px 8px #2a2a2a,
@@ -23,19 +23,20 @@
     border-radius: 12px;
 }
 
-.liquidGlass {
+.notAToastliquidGlass {
   background: transparent;
   backdrop-filter: saturate(120%) blur(1px) brightness(1.2)
     url(#glass-distortion);
   -webkit-backdrop-filter: saturate(120%) blur(2px) brightness(1.2)
     url(#glass-distortion);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1),
     0 0 20px rgba(255, 255, 255, 0.05);
   color: white;
+  border-radius: 8px;
 }
 
-.brutal {
+.notAToastbrutal {
   background: #fff000;
   border: 4px solid #000;
   color: #000;
@@ -43,14 +44,14 @@
   box-shadow: 6px 6px 0px #000;
 }
 
-.materialDark {
+.notAToastmaterialDark {
   background: #2a2a2a;
   color: #fff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   border-radius: 8px;
 }
 
-.clay {
+.notAToastclay {
   background: #e6eef9;
   color: #2a2a2a;
   box-shadow: inset 4px 4px 8px #c8d3e0, inset -4px -4px 8px #ffffff,
@@ -58,7 +59,7 @@
     border-radius: 18px;
 }
 
-.cyberpunk {
+.notAToastcyberpunk {
   background: linear-gradient(135deg, #ff00cc, #3333ff);
   color: #fff;
   border: 2px solid #00f0ff;
@@ -67,7 +68,7 @@
   font-weight: bold;
 }
 
-.sonoma {
+.notAToastsonoma {
   background: rgba(240, 240, 240, 0.2);
   color: #1c1c1c;
   backdrop-filter: blur(18px) saturate(200%);
@@ -75,7 +76,7 @@
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
 }
 
-.minimal {
+.notAToastminimal {
   background: transparent;
   color: #333;
   border: 2px solid #333;
@@ -83,7 +84,7 @@
   border-radius: 6px;
 }
 
-.skewed {
+.notAToastskewed {
   background: #fff;
   color: #111;
   transform: skew(-5deg);
@@ -91,14 +92,14 @@
   border: 2px solid #000;
 }
 
-.solarizedDark {
+.notAToastsolarizedDark {
   background: #002b36;
   color: #93a1a1;
   border: 1px solid #586e75;
   box-shadow: 0 0 10px rgba(0, 43, 54, 0.7);
 }
 
-.terminal {
+.notAToastterminal {
   background: #000000;
   color: #00ff00;
   font-family: "Courier New", monospace;
@@ -107,7 +108,7 @@
   border-radius: 4px;
 }
 
-.carbon {
+.notAToastcarbon {
   background: #212121;
   color: #f4f4f4;
   font-family: "IBM Plex Sans", sans-serif;
@@ -116,7 +117,7 @@
   border-radius: 6px;
 }
 
-.web3 {
+.notAToastweb3 {
   background: linear-gradient(135deg, #141e30, #243b55);
   color: #e0ffe0;
   border: 1px solid #44ff99;
@@ -125,7 +126,7 @@
   border-radius: 10px;
 }
 
-.cardboard {
+.notAToastcardboard {
   background: #d7c4a3;
   color: #4e3728;
   border: 2px dashed #a37c4e;
@@ -133,7 +134,7 @@
   border-radius: 6px;
 }
 
-.dotted {
+.notAToastdotted {
   background: #fff;
   color: #222;
   border: 2px dotted #666;
@@ -141,7 +142,7 @@
   border-radius: 4px;
 }
 
-.focus {
+.notAToastfocus {
   background: #000;
   color: #fff;
   border: 2px solid #00f;
@@ -149,7 +150,7 @@
   border-radius: 6px;
 }
 
-.default {
+.notAToastdefault {
   background: #ffffff;
   color: #333;
   border: 1px solid #ddd;
@@ -157,13 +158,13 @@
   border-radius: 6px;
 }
 
-.Gradient {
+.notAToastGradient {
   background: linear-gradient(to right, #ff8efb, #8efff2);
   color: #222;
   border-radius: 12px;
 }
 
-.rainbow {
+.notAToastrainbow {
   background: linear-gradient(
     90deg,
     red,
@@ -178,38 +179,38 @@
   border-radius: 16px;
 }
 
-.darkMatter {
+.notAToastdarkMatter {
   background: #0f0f0f;
   color: white;
   border-radius: 6px;
 }
 
-.gothicMist {
+.notAToastgothicMist {
   background: rgba(60, 60, 60, 0.8);
   color: white;
   border-radius: 8px;
 }
 
-.blackGlass {
+.notAToastblackGlass {
   background: rgba(0, 0, 0, 0.6);
   color: white;
   border-radius: 10px;
 }
 
-.terminalGreen {
+.notAToastterminalGreen {
   background: #000;
   color: #00ff00;
   font-family: monospace;
 }
 
-.aetherGrid {
+.notAToastaetherGrid {
   background: #121212;
   color: white;
   border: 1px dashed #ccc;
   border-radius: 6px;
 }
 
-.neonGlow {
+.notAToastneonGlow {
   background: #0f0f0f;
   color: #0ff;
   text-shadow: 0 0 5px #0ff;
@@ -217,40 +218,40 @@
   border-radius: 10px;
 }
 
-.stickyNote {
+.notAToaststickyNote {
   background: #fff9a1;
   color: #222;
   border: 1px solid #e6d800;
   border-radius: 4px;
 }
 
-.notebookSketch {
+.notAToastnotebookSketch {
   background: #fafafa;
   color: #333;
   border: 2px dashed #999;
 }
 
-.chalkboard {
+.notAToastchalkboard {
   background: #2c2c2c;
   color: #fefefe;
   font-family: "Courier New", monospace;
   border-radius: 4px;
 }
 
-.pixelRetro {
+.notAToastpixelRetro {
   background: #0000aa;
   color: #ffffff;
   font-family: "Press Start 2P", monospace;
 }
 
-.blueprintSketch {
+.notAToastblueprintSketch {
   background: #0a0f2c;
   color: #61dafb;
   font-family: monospace;
   border-radius: 2px;
 }
 
-.ironMesh {
+.notAToastironMesh {
   background: #444;
   border: 2px dashed #aaa;
   color: #eee;
@@ -258,7 +259,7 @@
   border-radius: 6px;
 }
 
-.circuitBoard {
+.notAToastcircuitBoard {
   background: #003b00;
   color: #00ff90;
   font-family: monospace;
@@ -266,7 +267,7 @@
   border-radius: 4px;
 }
 
-.warningAlert {
+.notAToastwarningAlert {
   background: #fff200;
   color: #000;
   border: 2px solid red;
@@ -274,7 +275,7 @@
   border-radius: 6px;
 }
 
-.woodGrain {
+.notAToastwoodGrain {
   background-color: #deb887;
   color: #3e2f1c;
   border: 1px solid #8b5a2b;
@@ -282,7 +283,7 @@
   border-radius: 8px;
 }
 
-.cautionTape {
+.notAToastcautionTape {
   background-color: yellow;
   color: black;
   border: 4px double black;
@@ -291,7 +292,7 @@
   border-radius: 2px;
 }
 
-.typewriterNote {
+.notAToasttypewriterNote {
   background-color: #fff8dc;
   color: #222;
   font-family: "Courier", monospace;
@@ -300,7 +301,7 @@
   border-radius: 4px;
 }
 
-.xrayOverlay {
+.notAToastxrayOverlay {
   background-color: rgba(0, 0, 0, 0.6);
   color: #ccf8ff;
   border: 1px solid #88e1f2;
@@ -309,7 +310,7 @@
   border-radius: 12px;
 }
 
-.legoBrick {
+.notAToastlegoBrick {
   background: #ff3d00;
   color: #fff;
   border-radius: 6px;
@@ -320,7 +321,7 @@
 }
 
 /* animations */
-@keyframes fadeIn {
+@keyframes notAToastfadeIn {
   from {
     opacity: 0;
     transform: translateY(10px);
@@ -330,7 +331,7 @@
     transform: translateY(0);
   }
 }
-@keyframes fadeOut {
+@keyframes notAToastfadeOut {
   from {
     opacity: 1;
     transform: translateY(0);
@@ -341,7 +342,7 @@
   }
 }
 
-@keyframes zoomIn {
+@keyframes notAToastzoomIn {
   from {
     opacity: 0;
     transform: scale(0);
@@ -351,7 +352,7 @@
     transform: scale(1);
   }
 }
-@keyframes zoomOut {
+@keyframes notAToastzoomOut {
   from {
     opacity: 1;
     transform: scale(1);
@@ -362,7 +363,7 @@
   }
 }
 
-@keyframes slideInLeft {
+@keyframes notAToastslideInLeft {
   from {
     opacity: 0;
     transform: translateX(-100%);
@@ -372,7 +373,7 @@
     transform: translateX(0);
   }
 }
-@keyframes slideOutLeft {
+@keyframes notAToastslideOutLeft {
   from {
     opacity: 1;
     transform: translateX(0);
@@ -383,7 +384,7 @@
   }
 }
 
-@keyframes slideInRight {
+@keyframes notAToastslideInRight {
   from {
     opacity: 0;
     transform: translateX(100%);
@@ -393,7 +394,7 @@
     transform: translateX(0);
   }
 }
-@keyframes slideOutRight {
+@keyframes notAToastslideOutRight {
   from {
     opacity: 1;
     transform: translateX(0);
@@ -404,7 +405,7 @@
   }
 }
 
-@keyframes slideInUp {
+@keyframes notAToastslideInUp {
   from {
     opacity: 0;
     transform: translateY(-100%);
@@ -414,7 +415,7 @@
     transform: translateY(0);
   }
 }
-@keyframes slideOutUp {
+@keyframes notAToastslideOutUp {
   from {
     opacity: 1;
     transform: translateY(0);
@@ -425,7 +426,7 @@
   }
 }
 
-@keyframes slideInDown {
+@keyframes notAToastslideInDown {
   from {
     opacity: 0;
     transform: translateY(100%);
@@ -435,7 +436,7 @@
     transform: translateY(0);
   }
 }
-@keyframes slideOutDown {
+@keyframes notAToastslideOutDown {
   from {
     opacity: 1;
     transform: translateY(0);
@@ -446,7 +447,7 @@
   }
 }
 
-@keyframes bounceIn {
+@keyframes notAToastbounceIn {
   0% {
     opacity: 0;
     transform: scale(0.3);
@@ -462,7 +463,7 @@
     transform: scale(1);
   }
 }
-@keyframes bounceOut {
+@keyframes notAToastbounceOut {
   0% {
     opacity: 1;
     transform: scale(1);
@@ -479,7 +480,7 @@
   }
 }
 
-@keyframes flipInX {
+@keyframes notAToastflipInX {
   from {
     transform: perspective(400px) rotateX(90deg);
     opacity: 0;
@@ -490,7 +491,7 @@
   }
 }
 
-@keyframes flipOutX {
+@keyframes notAToastflipOutX {
   from {
     transform: perspective(400px) rotateX(0deg);
     opacity: 1;
@@ -501,7 +502,7 @@
   }
 }
 
-@keyframes flipInY {
+@keyframes notAToastflipInY {
   from {
     transform: perspective(400px) rotateY(90deg);
     opacity: 0;
@@ -511,7 +512,7 @@
     opacity: 1;
   }
 }
-@keyframes flipOutY {
+@keyframes notAToastflipOutY {
   from {
     transform: perspective(400px) rotateY(0deg);
     opacity: 1;
@@ -522,7 +523,7 @@
   }
 }
 
-@keyframes rotateIn {
+@keyframes notAToastrotateIn {
   from {
     transform: rotate(-200deg);
     opacity: 0;
@@ -533,7 +534,7 @@
   }
 }
 
-@keyframes rotateOut {
+@keyframes notAToastrotateOut {
   from {
     transform: rotate(0deg);
     opacity: 1;
@@ -544,7 +545,7 @@
   }
 }
 
-@keyframes punchIn {
+@keyframes notAToastpunchIn {
   0% {
     transform: scale(0.5);
     opacity: 0;
@@ -558,7 +559,7 @@
   }
 }
 
-@keyframes punchOut {
+@keyframes notAToastpunchOut {
   0% {
     transform: scale(1);
     opacity: 1;
@@ -569,7 +570,7 @@
   }
 }
 
-@keyframes bubbleUp {
+@keyframes notAToastbubbleUp {
   0% {
     transform: translateY(40px) scale(0.8);
     opacity: 0;
@@ -583,7 +584,7 @@
   }
 }
 
-@keyframes bubbleDown {
+@keyframes notAToastbubbleDown {
   0% {
     transform: translateY(0px) scale(1);
     opacity: 1;
@@ -594,7 +595,7 @@
   }
 }
 
-@keyframes swirlIn {
+@keyframes notAToastswirlIn {
   0% {
     transform: rotate(-540deg) scale(0);
     opacity: 0;
@@ -605,7 +606,7 @@
   }
 }
 
-@keyframes swirlOut {
+@keyframes notAToastswirlOut {
   0% {
     transform: rotate(0deg) scale(1);
     opacity: 1;
@@ -616,7 +617,7 @@
   }
 }
 
-@keyframes wobbleIn {
+@keyframes notAToastwobbleIn {
   0% {
     transform: scale(0.9) rotateZ(-3deg);
     opacity: 0;
@@ -633,7 +634,7 @@
   }
 }
 
-@keyframes wobbleOut {
+@keyframes notAToastwobbleOut {
   0% {
     transform: scale(1) rotateZ(0deg);
     opacity: 1;
@@ -644,7 +645,7 @@
   }
 }
 
-@keyframes tiltUp {
+@keyframes notAToasttiltUp {
   from {
     transform: rotateX(-45deg);
     opacity: 0;
@@ -655,7 +656,7 @@
   }
 }
 
-@keyframes tiltDown {
+@keyframes notAToasttiltDown {
   from {
     transform: rotateX(0deg);
     opacity: 1;
@@ -666,7 +667,7 @@
   }
 }
 
-@keyframes windRightIn {
+@keyframes notAToastwindRightIn {
   0% {
     transform: translateX(100%) skewX(-45deg);
     opacity: 0;
@@ -677,7 +678,7 @@
   }
 }
 
-@keyframes windRightOut {
+@keyframes notAToastwindRightOut {
   0% {
     transform: translateX(0%) skewX(0deg);
     opacity: 1;
@@ -688,7 +689,7 @@
   }
 }
 
-@keyframes windLeftIn {
+@keyframes notAToastwindLeftIn {
   0% {
     transform: translateX(-100%) skewX(45deg);
     opacity: 0;
@@ -699,7 +700,7 @@
   }
 }
 
-@keyframes windLeftOut {
+@keyframes notAToastwindLeftOut {
   0% {
     transform: translateX(0%) skewX(0deg);
     opacity: 1;
@@ -710,7 +711,7 @@
   }
 }
 
-@keyframes squeezeIn {
+@keyframes notAToastsqueezeIn {
   0% {
     transform: scaleX(0.1);
     opacity: 0;
@@ -724,7 +725,7 @@
   }
 }
 
-@keyframes squeezeOut {
+@keyframes notAToastsqueezeOut {
   0% {
     transform: scaleX(1);
     opacity: 1;
@@ -735,7 +736,7 @@
   }
 }
 
-@keyframes fadeSlideZoomIn {
+@keyframes notAToastfadeSlideZoomIn {
   0% {
     opacity: 0;
     transform: translateY(30px) scale(0.8) rotateZ(-2deg);
@@ -746,7 +747,7 @@
   }
 }
 
-@keyframes fadeSlideZoomOut {
+@keyframes notAToastfadeSlideZoomOut {
   0% {
     opacity: 1;
     transform: translateY(0px) scale(1) rotateZ(0deg);
@@ -757,7 +758,7 @@
   }
 }
 
-@keyframes helixSpinIn {
+@keyframes notAToasthelixSpinIn {
   0% {
     opacity: 0;
     transform: rotateY(720deg) rotateZ(90deg) scale(0.3);
@@ -768,7 +769,7 @@
   }
 }
 
-@keyframes helixSpinOut {
+@keyframes notAToasthelixSpinOut {
   0% {
     opacity: 1;
     transform: rotateY(0deg) rotateZ(0deg) scale(1);
@@ -779,7 +780,7 @@
   }
 }
 
-@keyframes meteorDropIn {
+@keyframes notAToastmeteorDropIn {
   0% {
     transform: translate3d(150px, -150px, 200px) rotateZ(45deg) scale(0.2);
     opacity: 0;
@@ -790,7 +791,7 @@
   }
 }
 
-@keyframes meteorZoomOut {
+@keyframes notAToastmeteorZoomOut {
   0% {
     transform: translate3d(0, 0, 0) scale(1);
     opacity: 1;
@@ -801,7 +802,7 @@
   }
 }
 
-@keyframes portalIn {
+@keyframes notAToastportalIn {
   0% {
     transform: scale(0.1) rotateX(90deg) rotateY(90deg);
     opacity: 0;
@@ -812,7 +813,7 @@
   }
 }
 
-@keyframes portalOut {
+@keyframes notAToastportalOut {
   0% {
     transform: scale(1) rotateX(0deg) rotateY(0deg);
     opacity: 1;
@@ -823,7 +824,7 @@
   }
 }
 
-@keyframes cubeSpinIn {
+@keyframes notAToastcubeSpinIn {
   0% {
     transform: perspective(600px) rotateY(90deg);
     opacity: 0;
@@ -834,7 +835,7 @@
   }
 }
 
-@keyframes cubeSpinOut {
+@keyframes notAToastcubeSpinOut {
   0% {
     transform: perspective(600px) rotateY(0deg);
     opacity: 1;
@@ -845,30 +846,301 @@
   }
 }
 
+@keyframes notAToastjellyPopIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.2, 0.8);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(0.9, 1.1);
+  }
+  80% {
+    transform: scale(1.05, 0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes notAToastjellyPopOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1.1, 0.9);
+  }
+  40% {
+    transform: scale(0.9, 1.1);
+    opacity: 0.7;
+  }
+  60% {
+    transform: scale(0.8, 1.2);
+    opacity: 0.5;
+  }
+  80% {
+    transform: scale(1.2, 0.8);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+}
+
+
+@keyframes notAToastrippleIn {
+  0% { transform: scale(0); opacity: 0; border-radius: 50%; }
+  70% { transform: scale(1.1); opacity: 1; border-radius: 20px; }
+  100% { transform: scale(1); border-radius: 8px; }
+}
+
+@keyframes notAToastrippleOut {
+  0% { transform: scale(1); opacity: 1; border-radius: 8px; }
+  40% { transform: scale(0.8); border-radius: 20px; }
+  100% { transform: scale(0); opacity: 0; border-radius: 50%; }
+}
+
+@keyframes notAToastglitchIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translate(0, 0);
+    filter: none;
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1) translate(-3px, -2px);
+    filter: hue-rotate(20deg) contrast(150%);
+  }
+  40% {
+    transform: translate(3px, 2px);
+    filter: hue-rotate(-20deg) contrast(150%);
+  }
+  60% {
+    transform: translate(-2px, 1px);
+    filter: none;
+  }
+  80% {
+    transform: translate(2px, -1px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
+    filter: none;
+  }
+}
+
+@keyframes notAToastglitchOut {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+    filter: none;
+  }
+  20% {
+    transform: translate(-5px, -2px);
+    filter: hue-rotate(20deg) contrast(150%);
+  }
+  40% {
+    transform: translate(5px, 2px);
+    filter: hue-rotate(-20deg) contrast(150%);
+  }
+  60% {
+    transform: translate(-3px, 1px);
+    opacity: 0.7;
+  }
+  80% {
+    transform: translate(3px, -1px);
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.8);
+    filter: none;
+  }
+}
+
+@keyframes notAToastswingDownIn {
+  0% { transform: rotateX(-90deg); opacity: 0; transform-origin: top center; }
+  60% { transform: rotateX(20deg); opacity: 1; }
+  80% { transform: rotateX(-10deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+@keyframes notAToastswingUpOut {
+  0% { transform: rotateX(0); opacity: 1; transform-origin: bottom center; }
+  60% { transform: rotateX(-20deg); opacity: 0.6; }
+  100% { transform: rotateX(90deg); opacity: 0; }
+}
+
+@keyframes notAToastglideIn {
+  0% { transform: translate(-50px, -50px) scale(0.9); opacity: 0; }
+  100% { transform: translate(0,0) scale(1); opacity: 1; }
+}
+
+@keyframes notAToastglideOut {
+  0% { transform: translate(0,0) scale(1); opacity: 1; }
+  100% { transform: translate(50px, -50px) scale(0.9); opacity: 0; }
+}
+
+
+@keyframes notAToastcurtainIn {
+  0% { transform: scaleY(0); opacity: 0; transform-origin: center top; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes notAToastcurtainOut {
+  0% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(0); opacity: 0; transform-origin: center bottom; }
+}
+
+
+@keyframes notAToastslinkyIn {
+  0% { transform: translateY(-100%) scaleY(0.3); opacity: 0; }
+  60% { transform: translateY(20px) scaleY(1.2); opacity: 1; }
+  80% { transform: translateY(-10px) scaleY(0.9); }
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+@keyframes notAToastslinkyOut {
+  0% { transform: translateY(0) scaleY(1); opacity: 1; }
+  40% { transform: translateY(-20px) scaleY(1.2); }
+  100% { transform: translateY(100%) scaleY(0.3); opacity: 0; }
+}
+
+@keyframes notAToastsparkIn {
+  0% { transform: scale(0.5) rotate(-15deg); opacity: 0; filter: brightness(2); }
+  60% { transform: scale(1.1) rotate(8deg); opacity: 1; filter: brightness(1.2); }
+  100% { transform: scale(1) rotate(0); filter: brightness(1); }
+}
+
+@keyframes notAToastsparkOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  30% {
+    opacity: 0.8;
+    transform: scale(1.05) rotate(2deg);
+    filter: brightness(1.6);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.95) rotate(-2deg);
+    filter: brightness(1.3);
+  }
+  70% {
+    opacity: 0.4;
+    transform: scale(1.08) rotate(3deg);
+    filter: brightness(1.8);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.6) rotate(-5deg);
+    filter: brightness(0.8);
+  }
+}
+
+@keyframes notAToastdustIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+    filter: blur(6px);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.95) translateY(10px);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+
+@keyframes notAToastdustOut {
+  0% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+  50% { opacity: 0.6; transform: scale(1.05) translateY(-10px); filter: blur(2px); }
+  100% { opacity: 0; transform: scale(0.8) translateY(-40px); filter: blur(6px); }
+}
+
+@keyframes notAToastdriftIn {
+  0% { transform: translate(-80px, 80px) rotate(-10deg); opacity: 0; }
+  100% { transform: translate(0,0) rotate(0); opacity: 1; }
+}
+
+@keyframes notAToastdriftOut {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  40% {
+    opacity: 0.7;
+    transform: translate(30px, -20px) scale(0.95);
+  }
+  70% {
+    opacity: 0.4;
+    transform: translate(60px, -40px) scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(100px, -60px) scale(0.85);
+  }
+}
+
+
+
 /* ProgressBar Animations */
-@keyframes leftToRight {
+/* Slide In from Left */
+@keyframes notAToastslideInLeft {
   from { transform: translateX(-100%); }  
   to   { transform: translateX(0); }
 }
 
-@keyframes rightToLeft {
+/* Slide In from Right */
+@keyframes notAToastslideInRight {
+  from { transform: translateX(100%); }  
+  to   { transform: translateX(0); }
+}
+
+/* Shrink Left to Right */
+@keyframes notAToastshrinkLeft {
+  from {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  to {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+/* Shrink Right to Left */
+@keyframes notAToastshrinkRight {
   from { width: 100%; }
   to   { width: 0%; }
 }
 
-@keyframes expand {
+/* Expand (Grow) */
+@keyframes notAToastexpand {
   from { transform: scaleX(0); }
   to   { transform: scaleX(1); }
 }
 
-@keyframes shrink {
+/* Shrink (Collapse) */
+@keyframes notAToastcollapse {
   from { transform: scaleX(1); }
   to   { transform: scaleX(0); }
 }
 
 /* Icon animations */
-
-@keyframes iconBounce {
+@keyframes notAToastIconbounce {
   0%, 100% {
     transform: translateY(0);
   }
@@ -877,7 +1149,7 @@
   }
 }
 
-@keyframes iconSpin {
+@keyframes notAToastIconspin {
   0% {
     transform: rotate(0deg);
   }
@@ -886,7 +1158,7 @@
   }
 }
 
-@keyframes iconPulse {
+@keyframes notAToastIconpulse {
   0%, 100% {
     transform: scale(1);
   }
@@ -895,7 +1167,16 @@
   }
 }
 
-@keyframes iconWave {
+@keyframes notAToastIcondefault {
+  0%{
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes notAToastIconwave {
   0% { transform: rotate(0deg); }
   15% { transform: rotate(15deg); }
   30% { transform: rotate(-10deg); }
@@ -904,21 +1185,50 @@
   100% { transform: rotate(0deg); }
 }
 
-@keyframes iconFloat {
+@keyframes notAToastIconflipX {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(180deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+@keyframes notAToastIconflipY {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(180deg); }
+  100% { transform: rotateX(360deg); }
+}
+
+@keyframes notAToastIconshakeX {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+@keyframes notAToastIconshakeY {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  20%, 60% { transform: translateY(-6px); }
+  40%, 80% { transform: translateY(6px); }
 }
 
-/* Loaders */
-.loader {
-  border: 3px solid rgba(255, 255, 255, 0.2);
-  border-top: 3px solid white;
-  border-radius: 50%;
-  width: 1.2rem;
-  height: 1.2rem;
+@keyframes notAToastIconjelly {
+  0%, 100% { transform: scale(1, 1); }
+  25% { transform: scale(0.7, 1.3); }
+  50% { transform: scale(1.3, 0.7); }
+  75% { transform: scale(0.7, 1.3); }
 }
 
-@keyframes spin {
+@keyframes notAToastIconrubberBand {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.25, 0.75); }
+  40% { transform: scale(0.75, 1.25); }
+  50% { transform: scale(1.15, 0.85); }
+  65% { transform: scale(0.95, 1.05); }
+  75% { transform: scale(1.05, 0.95); }
+  100% { transform: scale(1); }
+}
+
+
+
+@keyframes notAToastspin {
   to {
     transform: rotate(360deg);
   }
