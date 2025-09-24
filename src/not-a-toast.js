@@ -888,5 +888,10 @@ function removeAllToasts() {
     .forEach((el) => el.remove());
 }
 
+if (typeof window !== "undefined") {
+  window.toast = toast;
+  window.removeAllToasts = removeAllToasts;
+}
+
 export default toast;
 export { removeAllToasts };

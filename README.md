@@ -53,13 +53,13 @@ Use this method for quick demos or projects without a build step.
 <head>
   <title>Not-a-Toast Demo</title>
   <!-- Stylesheet CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.2/dist/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.3/dist/style.css">
 </head>
 <body>
 
   <button onclick="showMyToast()">Show Toast!</button>
   <!-- Script CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.2/dist/not-a-toast.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.3/dist/not-a-toast.umd.js"></script>
 
   <script>
     function showMyToast() {
@@ -544,7 +544,7 @@ removeAllToasts();
 ```
 #### Example (CDN / UMD):
 ```js
-<script src="https://cdn.jsdelivr.net/npm/not-a-toast/dist/not-a-toast.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.3/dist/not-a-toast.umd.js"></script>
 <script>
   toast({ message: "First toast" });
   toast({ message: "Second toast" });
