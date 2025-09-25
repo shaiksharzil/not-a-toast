@@ -282,7 +282,7 @@ function toast(options = {}, config) {
       }
 
       if (icon) Icon.innerHTML = icon;
-      if (iconBackground) Icon.style.background = iconBackground;
+      if (iconBackground && iconType !== "loader") Icon.style.background = iconBackground;
       if (iconColor) Icon.style.color = iconColor;
       Icon.style.fontSize = "1rem";
       Icon.style.height = "1.3rem";
@@ -846,7 +846,7 @@ function updateToast(id, newConfig = {}) {
       iconElement.innerHTML = icon;
     }
     if (iconColor) iconElement.style.color = iconColor;
-    if (iconBackground) iconElement.style.background = iconBackground;
+    if (iconBackground && iconType!=="loader") iconElement.style.background = iconBackground;
     iconElement.style.borderRadius = iconBorderRadius;
     iconElement.style.fontSize = "1rem";
     iconElement.style.height = "1.3rem";

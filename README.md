@@ -53,13 +53,13 @@ Use this method for quick demos or projects without a build step.
 <head>
   <title>Not-a-Toast Demo</title>
   <!-- Stylesheet CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.3/dist/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.4/dist/style.css">
 </head>
 <body>
 
   <button onclick="showMyToast()">Show Toast!</button>
   <!-- Script CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.3/dist/not-a-toast.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.4/dist/not-a-toast.umd.js"></script>
 
   <script>
     function showMyToast() {
@@ -164,7 +164,7 @@ Apply a predefined theme to your toast. There are over 40 themes available, cate
 #### Minimal & Subtle:
 `default`, `minimal`, `focus`, `dotted`, `typewriterNote`, `notebookSketch`
 #### Colorful & Fun:
-`rainbow`, `Gradient`, `cyberpunk`, `web3`, `warningAlert`, `cautionTape`, `legoBrick`, `pixelRetro`, `stickyNote`, `cardboard`
+`rainbow`, `gradient`, `cyberpunk`, `web3`, `warningAlert`, `cautionTape`, `legoBrick`, `pixelRetro`, `stickyNote`, `cardboard`
 #### Skeuomorphic:
 `woodGrain`, `cardboard`, `clay`, `chalkboard`, `ironMesh`, `circuitBoard`
 ```js
@@ -533,26 +533,27 @@ testApiToast();
 You can clear all active toast notifications at once using the `removeAllToasts` function.
 #### Example (npm / ES module):
 ```js
+// Import removeAllToasts from "not-a-toast"
 import toast, { removeAllToasts } from "not-a-toast";
 import "not-a-toast/style.css";
 
 toast({ message: "First toast" });
 toast({ message: "Second toast" });
 
-// Remove them all
+// Remove all active toasts
 removeAllToasts();
 ```
 #### Example (CDN / UMD):
 ```js
-<script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.3/dist/not-a-toast.umd.js"></script>
+<!-- With CDN, you can use removeAllToasts() directly -->
 <script>
   toast({ message: "First toast" });
   toast({ message: "Second toast" });
 
-  // Remove them all
+  // Remove all active toasts
   removeAllToasts();
 </script>
 ```
 
 ## Support
-If you find this library useful, please consider giving it a star ⭐ on GitHub! Your support helps motivate me to maintain and improve it.
+If you find this library useful, please consider giving it a [star](https://github.com/shaiksharzil/not-a-toast) ⭐ on GitHub! Your support helps motivate me to maintain and improve it.
