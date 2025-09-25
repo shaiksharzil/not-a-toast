@@ -53,13 +53,13 @@ Use this method for quick demos or projects without a build step.
 <head>
   <title>Not-a-Toast Demo</title>
   <!-- Stylesheet CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.4/dist/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.5/dist/style.css">
 </head>
 <body>
 
   <button onclick="showMyToast()">Show Toast!</button>
   <!-- Script CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.4/dist/not-a-toast.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/not-a-toast@1.1.5/dist/not-a-toast.umd.js"></script>
 
   <script>
     function showMyToast() {
@@ -133,7 +133,7 @@ You can provide custom entry and exit animations by creating CSS `@keyframes` wi
 
 ```css
 /* In your CSS file */
-/* Add the prefix notAToast to your animation names in CSS */
+/* Add the prefix 'notAToast' to your animation names in CSS */
 
 @keyframes notAToastfoldIn {
   0% { transform: scaleY(0) rotateX(-90deg); opacity: 0; transform-origin: top; }
@@ -176,7 +176,7 @@ You can define your own custom theme by creating a CSS class with your desired s
 **Important:** Add the prefix `notAToast` to your CSS class name, but when passing it to the `toast` function, use the name without the prefix.
 ```css
 /* In your CSS file */
-/* Add the prefix notAToast to your CSS class name */
+/* Add the prefix 'notAToast' to your CSS class name */
 .notAToastcustomTheme {
    background: linear-gradient(to right, #4caf50, #8bc34a);
    color: white;
@@ -245,7 +245,7 @@ You can also define a custom progress bar animation by creating your own CSS `@k
 **Important:** Prefix the animation name with `notAToast` in CSS, but when passing it to the `toast` function, provide the name without the prefix.
 ```css
 /* In your CSS file */
-/* Add the prefix notAToast to your animation names in CSS */
+/* Add the prefix 'notAToast' to your animation names in CSS */
 @keyframes notAToastslideProgress {
   0% { width: 100%; background: limegreen; }
   50% { width: 50%; background: orange; }
@@ -316,7 +316,7 @@ You can customize the action button by defining your own CSS theme class.
 **Important:** Prefix the class name with `notAToast` in CSS, but when passing it to the `toast` function, provide the name without the prefix.
 ```css
 /* In your CSS file */
-/* Add the prefix notAToast to your CSS class name */
+/* Add the prefix 'notAToast' to your CSS class name */
 .notAToastmyButtonTheme {
   background: linear-gradient(135deg, #6366f1, #4338ca); /* Indigo gradient */
   color: #fff;
@@ -399,7 +399,7 @@ You can also define a custom animation for the toast icon using CSS `@keyframes`
 **Important:** Prefix the animation name with `notAToastIcon` in CSS, but when passing it to the `toast` function, provide the name without the prefix.
 ```css
 /* In your CSS file */
-/* Add the prefix notAToastIcon to your animation names in CSS */
+/* Add the prefix 'notAToastIcon' to your animation names in CSS */
 @keyframes notAToastIcontada {
   0% { transform: scale(1); }
   10%, 20% { transform: scale(0.7) rotate(-6deg); }
@@ -500,7 +500,7 @@ setTimeout(() => {
 **Key Points for Promise Toasts:**
 - Set `duration: 0` for the initial loading toast to prevent it from auto-closing.
 - Use `iconType: "loader"` for the loading toast to display a spinning loader icon.
-- Call `loadingToast.close()` to manually close the loading toast once your promise resolves or rejects.
+- Call `<variable>.close()` to manually dismiss the loading toast once your promise resolves or rejects. For example, if you assigned the toast to a variable (`const t = toast({...})`), you would call `t.close()`.
 ```js
 async function testApiToast() {
   const t = toast({
@@ -533,7 +533,7 @@ testApiToast();
 You can clear all active toast notifications at once using the `removeAllToasts` function.
 #### Example (npm / ES module):
 ```js
-// Import removeAllToasts from "not-a-toast"
+// Import 'removeAllToasts' from "not-a-toast"
 import toast, { removeAllToasts } from "not-a-toast";
 import "not-a-toast/style.css";
 
@@ -545,7 +545,7 @@ removeAllToasts();
 ```
 #### Example (CDN / UMD):
 ```js
-<!-- With CDN, you can use removeAllToasts() directly -->
+<!-- With CDN, you can use 'removeAllToasts()' directly -->
 <script>
   toast({ message: "First toast" });
   toast({ message: "Second toast" });

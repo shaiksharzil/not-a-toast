@@ -290,7 +290,7 @@ function toast(options = {}, config) {
       Icon.style.display = "flex";
       Icon.style.alignItems = "center";
       Icon.style.justifyContent = "center";
-      Icon.style.borderRadius = iconBorderRadius;
+      if (iconType !== "loader") Icon.style.borderRadius = iconBorderRadius;
       Icon.style.marginRight = "0.5rem";
       if (!(iconType == "loader"))
         Icon.style.animation = `${
@@ -847,7 +847,7 @@ function updateToast(id, newConfig = {}) {
     }
     if (iconColor) iconElement.style.color = iconColor;
     if (iconBackground && iconType!=="loader") iconElement.style.background = iconBackground;
-    iconElement.style.borderRadius = iconBorderRadius;
+    if (iconType !== "loader") iconElement.style.borderRadius = iconBorderRadius;
     iconElement.style.fontSize = "1rem";
     iconElement.style.height = "1.3rem";
     iconElement.style.width = "1.3rem";
