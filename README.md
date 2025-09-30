@@ -17,7 +17,7 @@
 - Action Button with Callback
 - Rich Icon System & Animations
 - Custom HTML Toast Content
-- Remove All Toast Fuction
+- Remove All Toast Function
 
 ## Demo
 Check out the live demo to see not-a-toast in action:https://not-a-toast.vercel.app/
